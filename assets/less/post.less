@@ -1,0 +1,33 @@
+@import '_code';
+@import '_colors';
+@import '_header';
+@import '_util';
+@import '_vars';
+
+html {
+    font-family: 'Ubuntu';
+}
+
+body {
+    color: @dark;
+    font-size: @font-size;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.post header {
+    .color-stripe(@contrast);
+
+    background-color: @dark;
+    color: white;
+    position: relative;
+
+    .content {
+        .container;
+    }
+
+    &::after {
+        bottom: 0;
+        top: inherit;
+    }
+}

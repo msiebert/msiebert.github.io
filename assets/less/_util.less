@@ -1,0 +1,23 @@
+/**
+ * This less file contains a utility mixins to be used in other files.
+ */
+
+@import '_vars';
+
+.container {
+    margin: 0 auto;
+    max-width: @screen-max-width;
+    padding: @block-padding-vertical @block-padding-horizontal;
+}
+
+.color-stripe(@color) {
+    &::after {
+        background: linear-gradient(to right, white 0, @color 50%, white 100%);
+        content: '';
+        height: 5px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}

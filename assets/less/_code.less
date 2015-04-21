@@ -1,0 +1,25 @@
+/**
+ * This less file contains all the styling for code snippets.
+ */
+
+@import '_colors';
+@import '_util';
+@import '_vars';
+
+.highlight {
+    background-color: @dark;
+    width: 100%;
+
+    pre {
+        .container;
+        color: white;
+
+        .k {
+            color: @contrast;
+        }
+
+        .s {
+            color: @light-contrast;
+        }
+    }
+}
