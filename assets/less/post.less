@@ -1,11 +1,12 @@
 @import '_code';
 @import '_colors';
+@import '_footer';
 @import '_header';
 @import '_util';
 @import '_vars';
 
 html {
-    font-family: 'Ubuntu';
+    font-family: 'Ubuntu Light';
 }
 
 body {
@@ -15,11 +16,14 @@ body {
     line-height: 1.4;
 }
 
-.post header {
-    .color-stripe(@contrast);
+p, ul, li, ol {
+    .with-max-width;
+}
 
-    background-color: @dark;
-    color: white;
+.post header {
+    .horizontal-bar(@dark-shadow);
+
+    margin-bottom: @block-margin;
     position: relative;
 
     .content {
@@ -29,5 +33,15 @@ body {
     &::after {
         bottom: 0;
         top: inherit;
+    }
+
+    .post-title {
+        font-size: 36px;
+        margin: 0;
+    }
+
+    .post-description {
+        margin-bottom: 0;
+        color: darken(white, 20%);
     }
 }

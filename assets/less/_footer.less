@@ -1,0 +1,23 @@
+/** Styles for the site footer */
+@import '_colors';
+@import '_util';
+
+footer.site-footer {
+    border-top: lighten(@dark, 60%) solid 1px;
+
+    .content {
+        .container;
+
+        .bio {
+            a {
+                color: lighten(@contrast, 20%);
+                text-decoration: none;
+
+                &:hover {
+                    color: lighten(@contrast, 30%);
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}

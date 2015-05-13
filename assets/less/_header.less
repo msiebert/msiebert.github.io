@@ -6,10 +6,53 @@
 @import '_util';
 
 header.site-header {
+    @font-height: 16px;
+    @logo-size: 125px;
+
     position: relative;
-    .color-stripe(@contrast);
 
     .content {
         .container;
+    }
+
+    .logo-container {
+        // border-right: 1px lighten(black, 70%) solid;
+        display: inline-block;
+        height: @logo-size + @font-height * 2;
+        padding-right: 50px;
+        width: @logo-size;
+
+        .logo {
+            height: @logo-size * .85;
+            width: @logo-size;
+            display: inline;
+        }
+
+        h3 {
+            display: block;
+            font-size: @font-height;
+            letter-spacing: 6px;
+            line-height: @font-height;
+            margin-top: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            width: @logo-size;
+        }
+
+    }
+
+    nav {
+        float: right !important;
+        display: inline-block;
+        // margin-left: 100px;
+        line-height: @logo-size + @font-height * 2;
+
+        a {
+            color: @dark;
+            font-size: 28px;
+            margin-left: 30px;
+            text-decoration: none;
+            vertical-align: bottom;
+        }
     }
 }

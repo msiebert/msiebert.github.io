@@ -4,20 +4,48 @@
 
 @import '_vars';
 
-.container {
-    margin: 0 auto;
+.with-max-width {
+    margin-left: auto;
+    margin-right: auto;
     max-width: @screen-max-width;
+}
+
+.container {
+    .with-max-width;
+    margin: 0 auto;
     padding: @block-padding-vertical @block-padding-horizontal;
 }
 
-.color-stripe(@color) {
-    &::after {
-        background: linear-gradient(to right, white 0, @color 50%, white 100%);
-        content: '';
-        height: 5px;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
+.horizontal-bar(@color) {
+    box-shadow: 0 5px 4px 1px @color;
+    background-color: @dark;
+    color: white;
+}
+
+.circle-image(@color, @height) {
+    left: -200px;
+    top: 50%;
+    height: @height;
+    margin-top: -@height / 2;
+    position: absolute;
+    border-radius: 100%;
+    border: solid @color 3px;
+    box-shadow: 0px 0px 10px 2px darken(@color, 50%);
+}
+
+.chinese-character(@content, @color) {
+    @character-height: 100px;
+    @character-padding: 20px;
+    position: relative;
+
+    &::before {
+        .circle-image(@color, @character-height);
+        color: @color;
+        content: @content;
+        font-size: @character-height - 30;
+        height: @character-height;
+        margin-top: -@character-height / 2 - @character-padding;
+        text-shadow: 1px 4px 6px darken(@dark, 20%), 0 0 0 #000, 1px 4px 6px darken(@dark, 20%);
+        padding: @character-padding;
     }
 }

@@ -7,11 +7,14 @@
 @import '_vars';
 
 .highlight {
-    background-color: @dark;
-    width: 100%;
+    .horizontal-bar(@dark-shadow);
+    margin-bottom: @block-margin;
+    margin-top: @block-margin;
+    // width: 90%;
 
     pre {
         .container;
+        .chinese-character('碼', @contrast);
         color: white;
 
         .k {
@@ -20,6 +23,10 @@
 
         .s {
             color: @light-contrast;
+        }
+
+        .cm {
+
         }
     }
 }
