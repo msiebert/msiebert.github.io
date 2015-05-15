@@ -10,23 +10,26 @@
     .horizontal-bar(@dark-shadow);
     margin-bottom: @block-margin;
     margin-top: @block-margin;
-    // width: 90%;
 
     pre {
         .container;
         .chinese-character('碼', @contrast);
-        color: white;
+        color: @regular-text;
 
         .k {
-            color: @contrast;
+            color: @keyword-color;
         }
 
         .s {
-            color: @light-contrast;
+            color: @contrast;
         }
 
         .cm {
+            color: @comment-color;
+        }
 
+        .mi {
+            color: @contrast;
         }
     }
 }
