@@ -1,22 +1,12 @@
-<html>
-    <head>
-        <title>Binary Nirvana - {{ page.title }}</title>
-        <link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-        <link href='{{ site.url }}/assets/css/blog.css' rel='stylesheet' type='text/css'>
-    </head>
-    <body>
-        {% include header.html %}
-
-        <article class="post">
-            <header>
-                <div class="content">
-                    <h1 class="post-title">{{ page.title }}</h1>
-                    <p class="post-description">{{ page.description }}</p>
-                </div>
-            </header>
-            {{ content }}
-        </article>
-
-        {% include footer.html %}
-    </body>
-</html>
+---
+layout: main
+---
+<article class="post">
+    <header>
+        <div class="content">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <p class="post-description">{{ page.description }}</p>
+        </div>
+    </header>
+    {{ content }}
+</article>
