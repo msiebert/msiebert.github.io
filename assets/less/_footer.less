@@ -7,6 +7,7 @@ footer.site-footer {
     @less-dark: lighten(@dark, 60%);
     background-color: @dark;
     color: white;
+    margin-top: @block-padding-vertical;
 
     .content {
         .container;
@@ -14,11 +15,11 @@ footer.site-footer {
         position: relative;
 
         a {
-            color: lighten(@contrast, 10%);
+            color: @contrast;
             text-decoration: none;
 
             &:hover {
-                color: lighten(@contrast, 20%);
+                color: lighten(@contrast, 10%);
                 text-decoration: none;
             }
         }
@@ -44,7 +45,7 @@ footer.site-footer {
             img {
                 border-radius: 100%;
                 width: 100%;
-                border: solid @less-dark 3px;
+                border: solid white 3px;
             }
 
             nav {
