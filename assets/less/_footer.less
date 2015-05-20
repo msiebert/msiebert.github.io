@@ -1,21 +1,63 @@
 /** Styles for the site footer */
 @import '_colors';
 @import '_util';
+@import '_vars';
 
 footer.site-footer {
-    border-top: lighten(@dark, 60%) solid 1px;
+    @less-dark: lighten(@dark, 60%);
+    background-color: @dark;
+    color: white;
 
     .content {
         .container;
+        font-size: 0px;
+        position: relative;
 
-        .bio {
-            a {
+        a {
+            color: lighten(@contrast, 10%);
+            text-decoration: none;
+
+            &:hover {
                 color: lighten(@contrast, 20%);
                 text-decoration: none;
+            }
+        }
 
-                &:hover {
-                    color: lighten(@contrast, 30%);
-                    text-decoration: none;
+        .bio {
+            display: inline-block;
+            font-size: @font-size;
+            padding-left: 5%;
+            width: 79%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-top: 0px;
+        }
+
+        .bio-picture {
+            border-right: @less-dark solid 1px;
+            display: inline-block;
+            padding-right: 5%;
+            text-align: center;
+            width: 10%;
+
+            img {
+                border-radius: 100%;
+                width: 100%;
+                border: solid @less-dark 3px;
+            }
+
+            nav {
+                margin-top: 10px;
+
+                .fa {
+                    font-size: 36px;
+                    margin: 0 10px;
+                    text-shadow: 2px 2px 2px black;
+
+                    &:hover {
+                        text-shadow: 1px 1px 2px black;
+                    }
                 }
             }
         }
