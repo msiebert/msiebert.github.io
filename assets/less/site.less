@@ -25,3 +25,22 @@ p, ul, li, ol {
     font-size: 48px;
     text-align: center;
 }
+
+.header {
+    .horizontal-bar(@dark);
+    position: relative;
+
+    .content {
+        .container;
+    }
+
+    .title {
+        font-size: 36px;
+        margin: 0;
+    }
+
+    .description {
+        margin-bottom: 0;
+        color: darken(white, 20%);
+    }
+}
