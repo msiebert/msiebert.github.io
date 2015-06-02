@@ -3,6 +3,7 @@
 @import '_colors';
 @import '_footer';
 @import '_header';
+@import '_projects';
 @import '_util';
 @import '_vars';
 
@@ -19,6 +20,16 @@ body {
 
 p, ul, li, ol {
     .with-max-width;
+}
+
+a {
+    color: @contrast;
+    text-decoration: none;
+
+    &:hover {
+        color: @contrast-hover;
+        text-decoration: none;
+    }
 }
 
 .under-construction {
@@ -42,5 +53,30 @@ p, ul, li, ol {
     .description {
         margin-bottom: 0;
         color: darken(white, 20%);
+    }
+}
+
+.index-list {
+    padding-left: 0px;
+
+    li {
+        list-style: none;
+        padding-bottom: 40px;
+        padding-top: 40px;
+
+        p {
+            margin: 0;
+        }
+
+        .title {
+            color: @contrast;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            border-left: solid @dark 3px;
+            padding-left: 20px;
+        }
     }
 }

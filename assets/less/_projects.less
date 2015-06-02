@@ -1,0 +1,44 @@
+/**
+ * Styles for the projects page.
+ */
+
+.projects {
+    @image-size: 100px;
+    @light-gray: lighten(@dark-shadow, 60%);
+
+    li {
+        padding-left: 40px;
+        padding-right: 40px;
+        text-align: center;
+
+        .description {
+            text-align: justify;
+        }
+    }
+
+    .project-picture {
+        border-radius: 100%;
+        border: solid @light-gray 4px;
+        display: block;
+        height: @image-size;
+        margin: auto;
+        padding: 10px;
+        width: @image-size;
+    }
+
+    .relate {
+        font-size: 56px;
+        line-height: @image-size;
+        text-align: center;
+    }
+
+    .title {
+        margin-top: 10px;
+
+        a {
+            border-bottom: solid @light-gray 3px;
+            padding: 5px 20px;
+        }
+    }
+
+}
