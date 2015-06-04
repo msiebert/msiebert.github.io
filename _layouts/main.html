@@ -7,8 +7,14 @@
         <link href='/assets/fonts/font-awesome-4.3.0/css/font-awesome.min.css' rel='stylesheet' type="text/css">
     </head>
     <body>
-        {% include header.html %}
-            {{ content }}
-        {% include footer.html %}
+        <div class="wrapper">
+            {% include header.html %}
+            <div class="site-content">
+                {{ content }}
+            </div>
+            <div class="footer">
+                {% include footer.html %}
+            </div>
+        </div>
     </body>
 </html>
