@@ -9,10 +9,27 @@
     max-width: @screen-max-width;
 }
 
+.responsive-padding {
+    @media (max-width: @screen-max-width-stop) {
+        padding-left: @full-screen-padding;
+        padding-right: @full-screen-padding;
+    }
+
+    @media (max-width: @half-width-stop) {
+        padding-left: @full-screen-padding / 2;
+        padding-right: @full-screen-padding / 2;
+    }
+}
+
 .container {
     .with-max-width;
+    .responsive-padding;
     margin: 0 auto;
     padding: @block-padding-vertical @block-padding-horizontal;
+
+    .row {
+        min-width: 0;
+    }
 }
 
 .horizontal-bar(@color) {

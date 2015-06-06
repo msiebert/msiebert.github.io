@@ -6,7 +6,7 @@
 @import '_util';
 
 header.site-header {
-    @font-height: 16px;
+    @font-height: 1.0rem;
     @logo-size: 125px;
 
     position: relative;
@@ -44,24 +44,44 @@ header.site-header {
             line-height: @font-height;
             margin-top: 5px;
             text-align: center;
-            text-transform: uppercase;
             width: @logo-size;
+        }
+
+        @media (max-width: @half-width-stop) {
+            display: block;
+            margin: auto;
+            padding: 0;
+
+            h3 {
+                width: auto;
+            }
         }
 
     }
 
     nav {
+        @link-spacing: 30px;
+
         float: right !important;
-        display: inline-block;
-        // margin-left: 100px;
         line-height: @logo-size + @font-height * 2;
 
         a {
             color: @dark;
-            font-size: 28px;
-            margin-left: 30px;
+            font-size: 1.8rem;
             text-decoration: none;
             vertical-align: bottom;
+
+            &:nth-child(2) {
+                margin-left: @link-spacing;
+            }
+        }
+
+        @media (max-width: @half-width-stop) {
+            display: block;
+            float: none !important;
+            line-height: normal;
+            margin-top: 40px;
+            text-align: center;
         }
     }
 }

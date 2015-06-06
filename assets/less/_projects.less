@@ -2,17 +2,21 @@
  * Styles for the projects page.
  */
 
-.projects {
+.index-list.projects {
     @image-size: 100px;
     @light-gray: lighten(@dark, 50%);
 
     li {
-        padding-left: 40px;
-        padding-right: 40px;
+        .responsive-padding;
         text-align: center;
 
         .description {
             text-align: justify;
+
+            @media (max-width: @concrete-stop) {
+                border: none;
+                padding-left: 0;
+            }
         }
     }
 
@@ -38,6 +42,7 @@
         a {
             border-bottom: solid @light-gray 3px;
             padding: 5px 20px;
+            padding-bottom: 0;
         }
     }
 

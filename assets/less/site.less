@@ -7,8 +7,11 @@
 @import '_util';
 @import '_vars';
 
+// @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic);
+// @import url(http://fonts.googleapis.com/css?family=Noto:400,700,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto:700italic,300,700,300italic);
 html {
-    font-family: 'Ubuntu Light';
+    font-family: 'Roboto';
 }
 
 body {
@@ -32,23 +35,6 @@ a {
     }
 }
 
-.wrapper {
-    min-height: 100%;
-    position: relative;
-
-    .site-content {
-        padding-bottom: 250px;
-    }
-
-    .footer {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-        left: 0;
-        height: 250px;
-    }
-}
-
 .header {
     .horizontal-bar(@dark);
     position: relative;
@@ -58,7 +44,7 @@ a {
     }
 
     .title {
-        font-size: 36px;
+        font-size: 2.4rem;
         margin: 0;
     }
 
@@ -69,6 +55,7 @@ a {
 }
 
 .index-list {
+    .container;
     padding-left: 0px;
 
     li {
@@ -81,9 +68,19 @@ a {
         }
 
         .title {
+            @base-title-font: 2rem;
+
             color: @contrast;
-            font-size: 32px;
+            font-size: @base-title-font;
             margin-bottom: 10px;
+
+            @media (max-width: @screen-max-width) {
+                font-size: @base-title-font - .2;
+            }
+
+            @media (max-width: @three-quarters-stop) {
+                font-size: @base-title-font - .4;
+            }
         }
 
         .description {

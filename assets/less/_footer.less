@@ -10,8 +10,6 @@ footer.site-footer {
 
     .content {
         .container;
-        font-size: 0px;
-        position: relative;
 
         a {
             color: @contrast;
@@ -23,43 +21,59 @@ footer.site-footer {
             }
         }
 
-        .bio {
-            display: inline-block;
-            font-size: @font-size;
-            padding-left: 5%;
-            width: 80%;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            margin-top: 0px;
-        }
-
         .bio-picture {
-            border-right: @less-dark solid 1px;
-            display: inline-block;
-            padding-right: 5%;
+            @picture-max-width: 115px;
             text-align: center;
-            width: 10%;
 
             img {
                 border-radius: 100%;
-                width: 100%;
                 border: solid white 3px;
+                width: 100%;
+
+                max-width: @picture-max-width;
+                max-height: @picture-max-width;
             }
 
             nav {
+                @icon-padding: 20px;
+
+                display: block;
                 margin-top: 10px;
+                min-width: 25px;
 
-                .fa {
-                    font-size: 36px;
-                    margin: 0 10px;
-                    text-shadow: 2px 2px 2px black;
+                p {
+                    display: inline;
+                }
 
-                    &:hover {
-                        text-shadow: 1px 1px 2px black;
+                a {
+                    padding-left: @icon-padding;
+
+                    .fa {
+                        font-size: 2.2rem;
+                        text-shadow: 2px 2px 2px black;
+
+                        &:hover {
+                            text-shadow: 1px 1px 2px black;
+                        }
+                    }
+
+                    &:first-child {
+                        padding-left: 0;
                     }
                 }
             }
         }
+
+        .bio {
+            @media (max-width: 900px) {
+                margin-top: 10px;
+            }
+
+            @media (max-width: @concrete-stop) {
+                text-align: justify;
+            }
+        }
+
+
     }
 }
