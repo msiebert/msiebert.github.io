@@ -1,4 +1,28 @@
 article.post {
+    .social-buttons {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        a {
+            padding-left: 10px;
+
+            &:first-child {
+                padding-left: 0;
+            }
+        }
+
+        @media (max-width: @screen-max-width-stop) {
+            right: @full-screen-padding;
+        }
+
+        @media (max-width: @tiny-stop) {
+            top: @block-padding-vertical + 6;
+            transform: none;
+        }
+    }
+
     .post-content {
         padding: 50px 0px;
 

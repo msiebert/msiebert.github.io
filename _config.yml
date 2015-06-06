@@ -11,3 +11,5 @@ defaults:
 
 kramdown:
   input: GFM
+
+domain: "https://msiebert.github.io/"
