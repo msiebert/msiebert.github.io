@@ -15,7 +15,11 @@
         .container;
         .chinese-character('碼', @contrast);
         color: @regular-text;
-        overflow-x: scroll;
+
+        code {
+            display: block;
+            overflow-x: auto;
+        }
 
         .k {
             color: @keyword-color;
