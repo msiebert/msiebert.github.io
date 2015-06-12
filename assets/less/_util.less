@@ -38,14 +38,15 @@
 }
 
 .circle-image(@color, @height) {
-    left: -200px;
-    top: 50%;
-    height: @height;
-    margin-top: -@height / 2;
-    position: absolute;
     border-radius: 100%;
     border: solid @color 3px;
     box-shadow: 0px 0px 10px 2px darken(@color, 50%);
+    height: @height;
+    left: -200px;
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    width: @height;
 }
 
 .chinese-character(@content, @color) {
