@@ -4,6 +4,8 @@ tags: [website, blogging]
 permalink: /blog/building-my-personal-website
 blurb: "I embark on a new adventure: blogging."
 description: "In which I share my experience building this website, and start blogging."
+metaname: Building My Personal Website
+image: fish.png
 ---
 
 So I did it. After months of feeling like I should make one, I now have a personal website (in case you were wondering, this is it).
