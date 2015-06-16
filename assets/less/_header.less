@@ -68,11 +68,12 @@ header.site-header {
         a {
             color: @dark;
             font-size: 1.8rem;
+            margin-left: @link-spacing;
             text-decoration: none;
             vertical-align: bottom;
 
-            &:nth-child(2) {
-                margin-left: @link-spacing;
+            &:first-child {
+                margin-left: 0;
             }
         }
 
