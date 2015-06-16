@@ -12,7 +12,7 @@ I recently started a new project, and since I love Scala, I thought it would be 
 
 ![Scala.js logo](/assets/img/calling-javascript-from-scalajs/scalajs.png)
 
-Shortly after starting this project, I needed to use Google's Javascript API, and therefore also had to find out how to call Javascript from Scala.js. [Scala.js's documentation on the subject](http://www.scala-js.org/doc/calling-javascript.html) kinda explains how to do it, but I decided I would write a more detailed explanation, as well as explain how to pass messages to the Javascript API. In this post, I will call `gapi.auth.authorize` as an example, and will be working from [Google's Drive API example](https://developers.google.com/drive/web/quickstart/quickstart-js).
+Shortly after starting this project, I needed to use Google's Javascript API, and therefore also had to find out how to call Javascript from Scala.js. [Scala.js's documentation on the subject](http://www.scala-js.org/doc/calling-javascript.html) explains how to do it, but in order to more fully understand the subject, I decided I would write a more detailed explanation, as well as explain how to pass messages to the Javascript API. In this post, I will call `gapi.auth.authorize` as an example, and will be working from [Google's Drive API example](https://developers.google.com/drive/web/quickstart/quickstart-js).
 
 Here's what we're trying to mimic with Scala.js:
 
