@@ -175,19 +175,14 @@ That's it! We've now called a Javascript API from Scala with Scala.js! Pretty co
 
 ***Update***
 
-Sébastien made a great suggestion: when defining the Scala binding for Javascript, use the JSName annotation to avoid creating a bunch of traits, thus, the code example above would become the following:
+Sébastien made a great suggestion: when defining the Scala binding for Javascript, use the JSName annotation to avoid creating a bunch of traits (and the package object), thus, the code example above would become the following:
 
 {% highlight scala %}
 import scala.scalajs.js
 import scala.scalajs.js.annotation.JSName
-import scalajs.js.GlobalScope
-
-package object goog extends GlobalScope {
-    val Auth: Auth = js.native
-}
 
 @JSName("gapi.auth")
-sealed trait Auth extends js.Object {
+object Auth extends js.Object {
   def authorize(...): Unit = js.native
 }
 {% endhighlight %}
