@@ -74,6 +74,8 @@ sealed trait Auth extends js.Object {
 For now, don't worry about the types on the `authorize` method. That will come later. Both of these traits extend `js.Object`, and, as such, cannot contain values or methods that are not assigned `js.native`. When compiled to Javascript, `Gapi` will be a Javascript object that has a value called `auth`, which in turn is an object that has a function called `authorize`. However, to make it possible to use these objects in the global scope, we need the following:
 
 {% highlight scala %}
+import scalajs.js.GlobalScope
+
 package object goog extends GlobalScope {
   /**
    * Root binding for the `gapi` object
@@ -170,3 +172,24 @@ object OAuthBootstrap {
 The `OAuth` object is very straight forward. We just call the API as we've defined it and provide a callback function that will print out the result. We also provide an `OAuthBootstrap` object, and export it as `OAuthBootstrap` (to avoid exporting that package name to Javascript). A call in Javascript to `OAuthBootstrap()` will result in the body of this object being called. A second later, thanks to `setTimeout`, we'll call our Scala `OAuth` object's `checkAuth` method, which will, in turn, call `gapi.auth.authorize`.
 
 That's it! We've now called a Javascript API from Scala with Scala.js! Pretty cool stuff. Please let me know if you have any questions, or if I've written anything inaccurate here.
+
+***Update***
+
+Sébastien made a great suggestion: when defining the Scala binding for Javascript, use the JSName annotation to avoid creating a bunch of traits, thus, the code example above would become the following:
+
+{% highlight scala %}
+import scala.scalajs.js
+import scala.scalajs.js.annotation.JSName
+import scalajs.js.GlobalScope
+
+package object goog extends GlobalScope {
+    val Auth: Auth = js.native
+}
+
+@JSName("gapi.auth")
+sealed trait Auth extends js.Object {
+  def authorize(...): Unit = js.native
+}
+{% endhighlight %}
+
+Thanks to Sébastien for the help!
