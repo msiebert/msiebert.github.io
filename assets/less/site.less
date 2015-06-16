@@ -72,6 +72,11 @@ a {
     .six.columns {
         padding-left: 30px;
         padding-right: 30px;
+
+        @media (max-width: @concrete-stop) {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
     }
 
     li {
