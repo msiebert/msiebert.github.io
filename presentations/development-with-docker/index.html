@@ -1,0 +1,265 @@
+---
+title: Development with Docker
+description: Introduction to using docker in a development environment.
+---
+
+<!doctype html>
+<html lang="en">
+<head>
+    <title>{{page.title}}</title>
+    <meta charset="utf-8">
+    <meta name="description" content="{{ page.description }}">
+    <meta name="author" content="Mark Siebert">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/theme/sky.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/presentations/development-with-docker/css/main.css">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/css/zenburn.min.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/print/pdf.min.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/print/paper.min.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/js/html5shiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+      <section data-state="no-controls" data-markdown>
+        # Intro to Development with Docker
+      </section>
+
+      <section class="who-am-i" data-markdown>
+        ## Who am I?
+        <br>
+        ![Mark Siebert]({{site.baseurl}}/presentations/development-with-docker/img/me.png)
+        <br>
+        `Mark Siebert`
+        * Senior Software Engineer at Lucid Software
+        * Total Docker Noob
+
+        Note: Mention Blue Matador, also presenting to actually come to the meeting
+      </section>
+
+      <section data-markdown>
+        ## Overview
+        * What is Docker?
+        * Docker CLI
+        * Dockerfiles
+        * Docker Compose
+      </section>
+
+      <section>
+        <section class="what-is-docker" data-markdown>
+          ## What is Docker?
+          ![Docker Whale]({{site.baseurl}}/presentations/development-with-docker/img/docker.png)
+        </section>
+        <section data-markdown>
+          ## Containers
+          ![Container]({{site.baseurl}}/presentations/development-with-docker/img/container.png)
+
+          Note: Docker wraps your software up in a container with all its dependencies. Infrastructure -> Host OS -> Docker Engine -> Container
+        </section>
+        <section>
+          <h2>Advantages</h2>
+          <ul>
+            <li>Easily synchronize development setups</li>
+            <li>Deploy to the cloud or to on premise installations easily</li>
+            <li>Composable</li>
+            <li>&lt;buzz&gt;Microservices!&lt;/buzz&gt;</li>
+          </ul>
+        </section>
+
+      </section>
+
+      <section>
+        <section data-markdown>
+          ## Docker CLI
+        </section>
+        <section data-markdown>
+          ## Commands
+          * run
+          * ps
+          * exec
+          * stop
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## docker run
+            <pre><code class="bash" data-noescape>
+              # docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+              # Example
+              docker run --name test -it debian
+
+            </code></pre>
+
+            Note: run a container based off debian:latest, name it test, and open interactive terminal. Won't talk about port, volumes, links, etc.
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## docker ps
+            <pre><code class="bash" data-noescape>
+              # docker ps [OPTIONS]
+
+              # Example
+              docker ps
+
+            </code></pre>
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## docker exec
+            <pre><code class="bash" data-noescape>
+              # docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+
+              # Example
+              docker exec -d test touch /tmp/foo
+              docker exec -it test bash
+
+            </code></pre>
+
+            Note: -d background run, second command opens bash in container
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## docker stop
+            <pre><code class="bash" data-noescape>
+              # docker stop [OPTIONS] CONTAINER [CONTAINER...]
+
+              # Example
+              docker stop test
+
+            </code></pre>
+          </script>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          ## Dockerfiles
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## An Example
+            <pre><code data-noescape>
+              # Dockerfile
+
+              FROM hseeberger/scala-sbt
+              MAINTAINER Mark
+
+              RUN mkdir -p /tmp/test
+              COPY test.txt /tmp/test/test.txt
+              CMD ["/usr/bin/wc","--help"]
+
+            </code></pre>
+
+            more commands can be found in the [Dockerfile Reference](https://docs.docker.com/engine/reference/builder/)
+          </script>
+        </section>
+      </section>
+
+      <section>
+        <section data-markdown>
+          ## Docker Compose
+          ###### or, I'd rather not `docker run` a billion times to start my app
+
+          Note: Docker compose defines relationships between your many containers.
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## An Example
+            <pre><code data-noescape>
+              # docker-compose.yml
+
+              version: '2'
+              services:
+                db:
+                  build:
+                    context: ./
+                    dockerfile: db/Dockerfile
+                  container_name: db
+                  volumes:
+                    - ../cassandra:/var/lib/cassandra
+
+                play-project:
+                  build:
+                    context: ./
+                    dockerfile: docker/play-project/Dockerfile
+                    args:
+                      user: $USER
+                      uid: $UID
+                  container_name: play-project
+                  command: sbt play-project/run
+                  links:
+                    - db
+                  ports:
+                    - "9000:9000"
+                  volumes:
+                    - ..:/app
+                    - ~/.ivy2:/home/user/.ivy2
+                  working_dir: /app
+                  stdin_open: true
+
+            </code></pre>
+
+            more commands can be found in the [Docker Compose Reference](https://docs.docker.com/compose/compose-file/)
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## Running Docker Compose
+            <pre><code data-trim data-noescape>
+              docker-compose up [OPTIONAL SERVICE NAME]
+              
+            </code></pre>
+
+            <pre><code data-trim data-noescape>
+              docker-compose down [OPTIONAL SERVICE NAME]
+
+            </code></pre>
+          </script>
+        </section>
+      </section>
+
+      <section data-markdown>
+        # Any questions?
+        ### ...that I probably can't answer?
+      </section>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/js/head.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/js/reveal.min.js"></script>
+  <script>
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      transition: 'slide',
+      dependencies: [
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/js/classList.min.js', condition: function() { return !document.body.classList; } },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/markdown/marked.min.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/markdown/markdown.min.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/highlight/highlight.min.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/notes/notes.min.js', async: true }
+      ]
+    });
+  </script>
+</body>
+</html>

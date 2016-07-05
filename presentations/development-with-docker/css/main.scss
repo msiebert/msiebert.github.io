@@ -1,0 +1,24 @@
+---
+---
+.reveal section img {
+  border: none;
+  box-shadow: none;
+  height: 50%;
+  width: 50%;
+}
+
+section.who-am-i {
+  img {
+    border: none;
+    border-radius: 100%;
+    height: 30%;
+    width: 30%;
+  }
+}
+
+section.what-is-docker {
+  img {
+    height: 40%;
+    width: 40%;
+  }
+}
