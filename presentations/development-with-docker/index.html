@@ -13,24 +13,24 @@ description: Introduction to using docker in a development environment.
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/reveal.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/theme/sky.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/presentations/reveal.js-3.3.0/css/reveal.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/presentations/reveal.js-3.3.0/css/theme/sky.css">
     <link rel="stylesheet" href="{{site.baseurl}}/presentations/development-with-docker/css/main.css">
 
     <!-- Code syntax highlighting -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/css/zenburn.min.css">
+    <link rel="stylesheet" href="{{site.baseurl}}/presentations/reveal.js-3.3.0/lib/css/zenburn.css">
 
     <!-- Printing and PDF exports -->
     <script>
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
-      link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/print/pdf.min.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/css/print/paper.min.css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? '{{site.baseurl}}/presentations/reveal.js-3.3.0/css/print/pdf.css' : '{{site.baseurl}}/presentations/reveal.js-3.3.0/css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
 
     <!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/js/html5shiv.min.js"></script>
+    <script src="{{site.baseurl}}/presentations/reveal.js-3.3.0/lib/js/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 <body>
@@ -226,7 +226,7 @@ description: Introduction to using docker in a development environment.
             ## Running Docker Compose
             <pre><code data-trim data-noescape>
               docker-compose up [OPTIONAL SERVICE NAME]
-              
+
             </code></pre>
 
             <pre><code data-trim data-noescape>
@@ -244,8 +244,8 @@ description: Introduction to using docker in a development environment.
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/js/head.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/js/reveal.min.js"></script>
+  <script src="{{site.baseurl}}/presentations/reveal.js-3.3.0/lib/js/head.min.js"></script>
+  <script src="{{site.baseurl}}/presentations/reveal.js-3.3.0/js/reveal.js"></script>
   <script>
     Reveal.initialize({
       controls: true,
@@ -254,11 +254,11 @@ description: Introduction to using docker in a development environment.
       center: true,
       transition: 'slide',
       dependencies: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/lib/js/classList.min.js', condition: function() { return !document.body.classList; } },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/markdown/marked.min.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/markdown/markdown.min.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/highlight/highlight.min.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.1.0/plugin/notes/notes.min.js', async: true }
+        { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/lib/js/classList.min.js', condition: function() { return !document.body.classList; } },
+        { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+        { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/plugin/highlight/highlight.min.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/plugin/notes/notes.js', async: true },
       ]
     });
   </script>
