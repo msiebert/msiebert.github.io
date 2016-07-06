@@ -93,6 +93,7 @@ description: Introduction to using docker in a development environment.
           * ps
           * exec
           * stop
+          * rm
           * more in the [Docker documentation](https://docs.docker.com/engine/reference/commandline/cli/)
         </section>
         <section data-markdown>
@@ -102,11 +103,11 @@ description: Introduction to using docker in a development environment.
               # docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 
               # Example
-              docker run --name test -it debian
+              docker run --name test -itd debian
 
             </code></pre>
 
-            Note: run a container based off debian:latest, name it test, and open interactive terminal. Won't talk about port, volumes, links, etc.
+            Note: run a container based off debian:latest, name it test, and open interactive terminal that's detached. Won't talk about port, volumes, links, etc.
           </script>
         </section>
         <section data-markdown>
@@ -144,6 +145,18 @@ description: Introduction to using docker in a development environment.
 
               # Example
               docker stop test
+
+            </code></pre>
+          </script>
+        </section>
+        <section data-markdown>
+          <script type="text/template">
+            ## docker rm
+            <pre><code class="bash" data-noescape>
+              # docker rm [OPTIONS] CONTAINER [CONTAINER...]
+
+              # Example
+              docker rm test
 
             </code></pre>
           </script>
