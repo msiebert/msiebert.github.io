@@ -257,7 +257,7 @@ description: Introduction to using docker in a development environment.
         { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/lib/js/classList.min.js', condition: function() { return !document.body.classList; } },
         { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
         { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-        { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/plugin/highlight/highlight.min.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+        { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/plugin/highlight/highlight.js', callback: function() { hljs.initHighlightingOnLoad(); } },
         { src: '{{site.baseurl}}/presentations/reveal.js-3.3.0/plugin/notes/notes.js', async: true },
       ]
     });
