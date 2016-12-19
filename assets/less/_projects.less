@@ -27,13 +27,23 @@
         height: @image-size;
         margin: auto;
         padding: 10px;
+        position: relative;
         width: @image-size;
     }
 
+    .blue-matador img, .relate img, .cumulus img {
+      width: 80%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 10%;
+    }
+
     .relate {
-        font-size: 56px;
-        line-height: @image-size;
-        text-align: center;
+    }
+
+    .cumulus {
+      background-color: #0f3542;
     }
 
     .title {
