@@ -13,3 +13,6 @@ kramdown:
   input: GFM
 
 domain: "https://msiebert.github.io/"
+
+gems:
+  - jekyll-sitemap
