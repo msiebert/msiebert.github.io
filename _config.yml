@@ -1,4 +1,4 @@
-exclude: [assets/less]
+exclude: [assets/less, docker]
 
 defaults:
   -
@@ -8,9 +8,6 @@ defaults:
     values:
       layout: "post"
       author: "Mark Siebert"
-
-kramdown:
-  input: GFM
 
 domain: "https://msiebert.github.io/"
 
