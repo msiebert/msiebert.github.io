@@ -22,4 +22,4 @@ It's especially important to note the `--host 0.0.0.0` part. Without it, you won
 
 I'll never install Ruby again*!
 
-* Unless, of course, I need to.
+\* Unless, of course, I need to.
