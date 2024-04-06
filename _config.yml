@@ -11,5 +11,5 @@ defaults:
 
 domain: "https://msiebert.github.io/"
 
-gems:
+plugins:
   - jekyll-sitemap
