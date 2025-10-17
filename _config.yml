@@ -1,5 +1,8 @@
 exclude: [assets/less, docker]
 
+paginate: 10
+paginate_path: "/page:num/"
+
 defaults:
   -
     scope:
@@ -13,3 +16,4 @@ domain: "https://msiebert.github.io/"
 
 plugins:
   - jekyll-sitemap
+  - jekyll-paginate

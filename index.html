@@ -14,7 +14,7 @@ image: fish.png
     </header>
 
     <ul class="index-list posts">
-    {% for post in site.posts limit:20 %}
+    {% for post in paginator.posts %}
         {% capture even %}{% cycle "true", "false" %}{% endcapture %}
         {% if even == "true" %}
             <div class="row">
@@ -48,4 +48,33 @@ image: fish.png
         {% endif %}
     {% endfor %}
     </ul>
+
+    <!-- Pagination Navigation -->
+    <div class="pagination" style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+        {% if paginator.previous_page %}
+            {% if paginator.previous_page == 1 %}
+                <a href="/">← Previous</a>
+            {% else %}
+                <a href="/page{{ paginator.previous_page }}/">← Previous</a>
+            {% endif %}
+        {% endif %}
+
+        <span style="margin: 0 10px;">
+            {% for num in (1..paginator.total_pages) %}
+                {% if num == paginator.page %}
+                    <span style="font-weight: bold; margin: 0 5px;">{{ num }}</span>
+                {% else %}
+                    {% if num == 1 %}
+                        <a href="/" style="margin: 0 5px;">{{ num }}</a>
+                    {% else %}
+                        <a href="/page{{ num }}/" style="margin: 0 5px;">{{ num }}</a>
+                    {% endif %}
+                {% endif %}
+            {% endfor %}
+        </span>
+
+        {% if paginator.next_page %}
+            <a href="/page{{ paginator.next_page }}/">Next →</a>
+        {% endif %}
+    </div>
 </article>
