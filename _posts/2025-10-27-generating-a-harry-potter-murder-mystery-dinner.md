@@ -12,6 +12,8 @@ Every October, my wife and I host a Harry Potter party for several couples in ou
 
 Given my interest in LLMs, I decided I'd try my hand at generating the mystery using Claude. It still turned out to be a lot of work. But the result was more immersive and thorough than if I had written it myself. Read on to see the steps I took.
 
+![Claude Snitch](/assets/img/harry-potter-murder-mystery/header.png)
+
 ### 1. The System Prompt
 
 At the onset of my work, I created a project in Claude. This would give me a good place to gather all the documents I'd be creating. Then, to make sure I got the results I wanted consistently throughout the process, I seeded it with the following project instructions:
