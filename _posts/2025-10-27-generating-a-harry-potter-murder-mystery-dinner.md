@@ -2,7 +2,7 @@
 title: Generating a Harry Potter Murder Mystery Dinner with Claude
 tags: [ai, claude]
 permalink: /blog/harry-potter-murder-mystery
-blurb: "Can an LLM create a convincing mystery for nerds like me"
+blurb: "Can an LLM create a convincing mystery for nerds like me?"
 description: "Creating a Harry Potter themed murdery mystery party was not effortless, but it was better than if I'd done it by hand"
 metaname: Harry Potter Murder Mystery with Claude
 image: harry-potter-murder-mystery/header.png
