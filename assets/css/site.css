@@ -150,6 +150,7 @@ article.post #disqus_thread .row {
   width: 100px;
   color: #ff3333;
   content: '碼';
+  font-family: 'Noto Sans SC', 'Microsoft YaHei', 'SimSun', 'STHeiti', 'PingFang SC', sans-serif;
   font-size: 70px;
   height: 100px;
   margin-top: calc(-100px / 2 - 20px);
