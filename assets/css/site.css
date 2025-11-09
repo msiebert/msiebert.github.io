@@ -76,14 +76,14 @@ article.post #disqus_thread .row {
   font-size: 1.8rem;
 }
 .blog .posts li.post .publish-date .year {
-  font-size: 1rem;
+  font-size: 0.85rem;
 }
 @media (max-width: 1200px) {
   .blog .posts li.post .publish-date .day {
     font-size: 1.6rem;
   }
   .blog .posts li.post .publish-date .month {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
   }
 }
 @media (max-width: 937.5px) {
@@ -91,7 +91,7 @@ article.post #disqus_thread .row {
     font-size: 1.4rem;
   }
   .blog .posts li.post .publish-date .month {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
   }
 }
 .blog .posts li.post .content .tags {
@@ -167,6 +167,7 @@ article.post #disqus_thread .row {
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-word;
+  font-size: 0.95rem;
 }
 .highlight pre .k,
 .highlight pre .kd {
@@ -463,7 +464,7 @@ html {
 }
 body {
   color: #2c2c2c;
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   margin: 0;
   line-height: 1.4;
 }
