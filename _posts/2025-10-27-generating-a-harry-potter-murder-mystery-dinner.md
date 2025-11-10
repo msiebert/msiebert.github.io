@@ -18,21 +18,17 @@ Given my interest in LLMs, I decided I'd try my hand at generating the mystery u
 
 At the onset of my work, I created a project in Claude. This would give me a good place to gather all the documents I'd be creating. Then, to make sure I got the results I wanted consistently throughout the process, I seeded it with the following project instructions:
 
-{% highlight markdown %}
-
+```markdown
 You are an expert at writing mysteries stories and a big fan of social deduction games. You know exactly how to write clues and character backstories to help a team catch the murderer, but not make them so obvious that the game is no fun.
 
 In this project, we will be planning a Harry Potter themed murder mystery dinner party for 10 couples. None of the characters from the books should be present in the scenario, but the themes and the world building from the series should be evident.
-
-{% endhighlight %}
+```
 
 Next, I started a chat to get a rough overall storyline:
 
-{% highlight markdown %}
-
+```markdown
 Let's start by planning the overall story of the murder mystery. There should be 20 roles, 10 male and 10 female. The characters should all be adults, and not students at Hogwarts. There should be a victim, a murderer, and two accomplices. Give a rough overview of the scenario, the murder method, and motive. Provide a list of the 20 characters and a brief background on each one
-
-{% endhighlight %}
+```
 
 I was fairly pleased with the result of this first query: we would be focused on a tale of magical embezzlement of funds for endangered magical creatures at the Ministry of Magic. The cast of characters was varied and interesting. I decided to accept Claude's first pass at generating the story structure.
 
@@ -40,11 +36,9 @@ I was fairly pleased with the result of this first query: we would be focused on
 
 The next step was to create the clues. I wanted the mystery to have a mix of environmental clues like notes or newspapers, and interaction clues, which would be discovered by having characters talk to each other. Here's the prompt I used:
 
-{% highlight markdown %}
-
+```markdown
 Let's create the clues for the mystery. Let's include a mix of clues that will be found in the environment, and clues that can be unearthed by certain characters talking to the right person. First, create an artifact to hold approved clues. Next, present me with each clue individually as you design it. Once I say it is good enough to use, add it to the artifact
-
-{% endhighlight %}
+```
 
 After that, it was just a matter of iterating over clues. This was probably the part of the project that worked the most poorly using Claude. I found that Claude was fairly repetitious in the types of clues it generated (maybe because it was using prior entries in the context and I should have specified that clues should be varied). I also had to keep track of what clues existed and essentially anticipate the investigation that would take place based on the clues presented. I was often very pointed about the exact clue I wanted, and Claude was basically fancy autocomplete. Then again, this is probably the most interesting part of the mystery, and probably the part of the process most in need of a human in the loop.
 
@@ -52,16 +46,14 @@ After that, it was just a matter of iterating over clues. This was probably the 
 
 Once we had the clues in place, I needed to flesh out the backstories for the cast of characters. Because I knew I wanted much of the same process for all of the 20 characters, I added the following to my system prompt to cut down on repitition:
 
-{% highlight markdown %}
-
+```markdown
 When I ask you to enter character backstory planning mode, you should do the following:
 1. Consult the project docs to understand the overall story and the clues that point towards the murderer.
 2. Create a new artifact for the backstory of the character I mention. Ensure that the character's relationships are consistent with existing character backstories
 3. Generate a first draft of their backstory. It should include a brief description of the character and their work/background. Do not include any details about the character's physical appearance so that anyone can be the character. Make sure to write in a whimsical way that befits the Harry Potter theme, and try to add details that make the character feel like a real part of the Wizarding World. Include any details that are mentioned in the clues that the person should know about. Then, create 2 Gala Objectives (information to glean from other characters to help with their own lives or to make friends) for the character, making sure to include any that may be mentioned in the clues for that character.
 5. Add a quote from the character to show off their personality at the top of the document
 6. Work with me to fine tune the backstory
-
-{% endhighlight %}
+```
 
 Then I just create a chat per character
 
