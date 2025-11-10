@@ -18,9 +18,7 @@
         code {
             display: block;
             overflow-x: auto;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-            word-break: break-word;
+            white-space: pre;
             font-size: 0.95rem;
         }
 
@@ -43,5 +41,12 @@
         .nt {
             color: @contrast;
         }
+    }
+
+    // Enable word wrapping only for markdown code blocks (AI prompts)
+    &.language-markdown pre code {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        word-break: break-word;
     }
 }

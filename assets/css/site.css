@@ -197,9 +197,7 @@ article.post #disqus_thread .row {
 .highlight pre code {
   display: block;
   overflow-x: auto;
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  word-break: break-word;
+  white-space: pre;
   font-size: 0.95rem;
 }
 .highlight pre .k,
@@ -220,6 +218,11 @@ article.post #disqus_thread .row {
 }
 .highlight pre .nt {
   color: #ff3333;
+}
+.highlight.language-markdown pre code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 /**
  * This less file contains the colors used in the site.
