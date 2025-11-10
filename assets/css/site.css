@@ -391,7 +391,8 @@ header.site-header nav a:first-child {
 }
 .index-list.projects .blue-matador img,
 .index-list.projects .relate img,
-.index-list.projects .cumulus img {
+.index-list.projects .cumulus img,
+.index-list.projects .mixpanel img {
   width: 80%;
   position: absolute;
   top: 50%;
