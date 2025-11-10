@@ -83,7 +83,7 @@ And with that, our party was ready to go!
 
 ### 7. Reflection
 
-If I were to do it again, I'd probably make the mystery a little less obvious. The group of people we invited are all heavy strategy game players, and they only got it wrong because they thought the true murderer was too obvious (which, to be fair, is a problem I'd like to have). I'd also make the characters have the same first name as the person playing the role. People kept forgetting who was who when they heard character names that weren't their own.
+If I were to do it again, I'd probably make the mystery a little less obvious. The group of people we invited are all heavy strategy game players, and they only got it wrong because they thought the true murderer was too obvious (which, to be fair, suggests I've made the right friends). I'd also make the characters have the same first name as the person playing the role. People kept forgetting who was who when they heard character names that weren't their own.
 
 I'd probably also try using Claude Code with specialized agents to generate things in parallel. I use it a lot for other projects, so it's honestly a more comfortable interface for me.
 
