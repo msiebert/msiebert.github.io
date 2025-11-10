@@ -8,15 +8,15 @@ metaname: Harry Potter Murder Mystery with Claude
 image: harry-potter-murder-mystery/header.png
 ---
 
-Every October, my wife and I host a Harry Potter party for several couples in our area. It's a big event, complete with decorations, costumes, and a potluck. This year, we decided we wanted to do a murder mystery party, but a quick Google search showed there were no ready made scenarios for the 14-20 guests we planned on having, so we decided to make one ourselves. The only catch was we'd never been to a murder mystery party.
+Every October, my wife and I host a Harry Potter party for several couples in our area. It's a big event, complete with decorations, costumes, and a potluck. This year, we decided we wanted to do a murder mystery party, but a quick Google search showed there were no ready-made scenarios for the 14-20 guests we planned on having. So we decided to make one ourselves. The only catch? We'd never actually been to a murder mystery party.
 
-Given my interest in LLMs, I decided I'd try my hand at generating the mystery using Claude. It still turned out to be a lot of work. But the result was more immersive and thorough than if I had written it myself. Read on to see the steps I took.
+Given my interest in LLMs, I decided I'd try my hand at generating the mystery using Claude. Turns out it still took a lot of work, but the result was more immersive and thorough than if I had written it myself. Read on to see the steps I took.
 
 ![Claude Snitch](/assets/img/harry-potter-murder-mystery/header.png)
 
 ### 1. The System Prompt
 
-At the onset of my work, I created a project in Claude. This would give me a good place to gather all the documents I'd be creating. Then, to make sure I got the results I wanted consistently throughout the process, I seeded it with the following project instructions:
+First thing I did was create a project in Claude. This gave me a good place to gather all the documents I'd be creating. Then, to make sure I got the results I wanted consistently throughout the process, I seeded it with the following project instructions:
 
 {% highlight markdown %}
 
@@ -46,7 +46,7 @@ Let's create the clues for the mystery. Let's include a mix of clues that will b
 
 {% endhighlight %}
 
-After that, it was just a matter of iterating over clues. This was probably the part of the project that worked the most poorly using Claude. I found that Claude was fairly repetitious in the types of clues it generated (maybe because it was using prior entries in the context and I should have specified that clues should be varied). I also had to keep track of what clues existed and essentially anticipate the investigation that would take place based on the clues presented. I was often very pointed about the exact clue I wanted, and Claude was basically fancy autocomplete. Then again, this is probably the most interesting part of the mystery, and probably the part of the process most in need of a human in the loop.
+After that, it was just a matter of iterating over clues. This was probably the part of the project that worked the most poorly using Claude. I found that it was fairly repetitious in the types of clues it generated (maybe because it was using prior entries in the context and I should have specified that clues should be more varied). I also had to keep track of what clues existed and essentially anticipate the investigation that would take place based on the clues presented. I was often very pointed about the exact clue I wanted, and Claude was basically fancy autocomplete at that point. Then again, this is probably the most interesting part of the mystery, and probably the part of the process most in need of a human in the loop.
 
 ### 3. The Cast
 
@@ -63,9 +63,9 @@ When I ask you to enter character backstory planning mode, you should do the fol
 
 {% endhighlight %}
 
-Then I just create a chat per character
+Then I just created a chat per character and went through the process 20 times.
 
-Claude did a great job on this part. I would never have been able to create character stories as immersive if I'd been writing by hand. If there's one part I'd use AI for again, it'd be character generation.
+Claude did a great job on this part. I would never have been able to create character stories as immersive if I'd been writing by hand (I'm just not that creative). If there's one part I'd use AI for again, it'd definitely be character generation.
 
 ### 4. The Website
 
@@ -83,10 +83,10 @@ And with that, our party was ready to go!
 
 ### 7. Reflection
 
-If I were to do it again, I'd probably make the mystery a little less obvious because the group of people we invited are all heavy strategy game players and they only got it wrong because they thought the true murderer was too obvious. I'd alos make the characters have the same first name as the person playing the role. People kept forgetting who was who when they heard the names of the characters in the scenario.
+If I were to do it again, I'd probably make the mystery a little less obvious. The group of people we invited are all heavy strategy game players, and they only got it wrong because they thought the true murderer was too obvious (which, to be fair, is a problem I'd like to have). I'd also make the characters have the same first name as the person playing the role. People kept forgetting who was who when they heard character names that weren't their own.
 
 I'd probably also try using Claude Code with specialized agents to generate things in parallel. I use it a lot for other projects, so it's honestly a more comfortable interface for me.
 
-Overall, the project still took at least 8 hours to complete. The result was awesome though. The party went well: everyone enjoyed their characters, accusations flew, and the murderer barely got away with it.
+Overall, the project still took at least 8 hours to complete, but the result was awesome. The party went well: everyone enjoyed their characters, accusations flew, and the murderer barely got away with it.
 
-It was great fun, and I highly recommend using AI for a project like this. Check out [the website](https://msiebert.github.io/harry-potter-murder-mystery/) if you're interested in a deeper look at the results.
+It was great fun, and I highly recommend using AI for a project like this. If you're planning your own murder mystery party (Harry Potter themed or otherwise), check out [the website](https://msiebert.github.io/harry-potter-murder-mystery/) to see the full results. And if you have any questions about the process, let me know!
