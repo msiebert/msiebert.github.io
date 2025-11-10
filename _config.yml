@@ -1,4 +1,4 @@
-exclude: [assets/less, docker]
+exclude: [assets/less, docker, WRITING_STYLE_GUIDE.md]
 
 paginate: 10
 paginate_path: "/page:num/"
