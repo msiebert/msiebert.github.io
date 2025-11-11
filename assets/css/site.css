@@ -219,7 +219,7 @@ article.post #disqus_thread .row {
 .highlight pre .nt {
   color: #ff3333;
 }
-.highlight.language-markdown pre code {
+.language-markdown.highlighter-rouge .highlight pre code {
   white-space: pre-wrap;
   word-wrap: break-word;
   word-break: break-word;

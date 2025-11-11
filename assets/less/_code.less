@@ -43,10 +43,12 @@
         }
     }
 
-    // Enable word wrapping only for markdown code blocks (AI prompts)
-    &.language-markdown pre code {
-        white-space: pre-wrap;
-        word-wrap: break-word;
-        word-break: break-word;
-    }
+}
+
+// Enable word wrapping only for markdown code blocks (AI prompts)
+// Target the outer wrapper structure: .language-markdown.highlighter-rouge > .highlight > pre > code
+.language-markdown.highlighter-rouge .highlight pre code {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: break-word;
 }
