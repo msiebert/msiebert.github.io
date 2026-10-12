@@ -389,6 +389,107 @@ header.site-header nav a:first-child {
   }
 }
 /**
+ * Styles for the home page: featured projects and latest posts.
+ */
+article.home .section-title {
+  font-size: 1.6rem;
+  margin: 0;
+  padding-top: 40px;
+}
+@media (max-width: 1250px) {
+  article.home .section-title {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 625px) {
+  article.home .section-title {
+    padding-left: 40px / 2;
+    padding-right: 40px / 2;
+  }
+}
+article.home .section-more {
+  text-align: center;
+  margin: 10px auto 40px;
+}
+article.home .featured > .content,
+article.home .latest > .content {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 0px;
+}
+@media (max-width: 1250px) {
+  article.home .featured > .content,
+  article.home .latest > .content {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+@media (max-width: 625px) {
+  article.home .featured > .content,
+  article.home .latest > .content {
+    padding-left: 40px / 2;
+    padding-right: 40px / 2;
+  }
+}
+article.home .featured > .content .row,
+article.home .latest > .content .row {
+  min-width: 0;
+}
+article.home .featured .six.columns {
+  padding: 20px 30px;
+}
+@media (max-width: 768px) {
+  article.home .featured .six.columns {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+article.home .featured-card {
+  border: solid #acacac 3px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+article.home .featured-card .featured-image {
+  display: block;
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+article.home .featured-card .featured-icon {
+  background-color: #2c2c2c;
+  color: white;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+article.home .featured-card .featured-icon .fa {
+  font-size: 5rem;
+  text-shadow: none;
+}
+article.home .featured-card .featured-body {
+  padding: 20px;
+}
+article.home .featured-card .featured-body p {
+  margin: 0 0 10px;
+}
+article.home .featured-card .title {
+  color: #ff3333;
+  font-size: 2rem;
+}
+article.home .featured-card .tag {
+  color: #acacac;
+  margin-right: 8px;
+}
+article.home .featured-card .links a {
+  margin-right: 20px;
+}
+article.home .latest .index-list {
+  min-height: 0;
+}
+/**
  * Styles for the projects page.
  */
 .index-list.projects li {

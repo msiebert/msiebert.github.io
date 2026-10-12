@@ -1,0 +1,86 @@
+/**
+ * Styles for the home page: featured projects and latest posts.
+ */
+
+article.home {
+    @light-gray: lighten(@dark, 50%);
+
+    .section-title {
+        font-size: 1.6rem;
+        margin: 0;
+        padding-top: @block-padding-vertical;
+        .responsive-padding;
+    }
+
+    .section-more {
+        text-align: center;
+        margin: 10px auto 40px;
+    }
+
+    .featured > .content, .latest > .content {
+        .container;
+    }
+
+    .featured {
+        .six.columns {
+            padding: 20px 30px;
+
+            @media (max-width: @concrete-stop) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
+
+    .featured-card {
+        border: solid @light-gray 3px;
+        border-radius: 6px;
+        overflow: hidden;
+
+        .featured-image {
+            display: block;
+            height: 200px;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .featured-icon {
+            background-color: @dark;
+            color: white;
+            align-items: center;
+            display: flex;
+            justify-content: center;
+
+            .fa {
+                font-size: 5rem;
+                text-shadow: none;
+            }
+        }
+
+        .featured-body {
+            padding: 20px;
+
+            p {
+                margin: 0 0 10px;
+            }
+        }
+
+        .title {
+            color: @contrast;
+            font-size: 2rem;
+        }
+
+        .tag {
+            color: @light-gray;
+            margin-right: 8px;
+        }
+
+        .links a {
+            margin-right: 20px;
+        }
+    }
+
+    .latest .index-list {
+        min-height: 0;
+    }
+}

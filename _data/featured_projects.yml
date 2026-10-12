@@ -1,0 +1,16 @@
+- title: Shark Fam
+  blurb: An interactive explorer for the shark family tree. Move through orders, families and genera by click, arrow keys or swipe, then meet each species as a to-scale 3D shark swimming past a diver.
+  image: shark-fam.jpg
+  tags: [TypeScript, Three.js, Vite]
+  links:
+    - label: Try it
+      url: https://msiebert.github.io/shark-fam/
+    - label: Source
+      url: https://github.com/msiebert/shark-fam
+- title: Wenchang
+  blurb: A Python library that gives AI agents persistent, self-organizing memory. It is a virtual filesystem of markdown files in GCS, exposed as tools with optimistic concurrency and scope-based authorization.
+  icon: fa-book
+  tags: [Python, AI agents, GCS]
+  links:
+    - label: Source
+      url: https://github.com/msiebert/wenchang
