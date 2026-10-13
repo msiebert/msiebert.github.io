@@ -5,7 +5,7 @@ metaname: Binary Nirvana
 description: One half Asian's ruminations on the path to digital enlightenment.
 image: fish.png
 ---
-<article class="home">
+<article class="blog home">
     <header class="header">
         <div class="content">
             <h1 class="title">Binary Nirvana</h1>
@@ -16,35 +16,48 @@ image: fish.png
     <section class="featured">
         <div class="content">
             <h2 class="section-title">Things I'm building</h2>
-            <div class="row">
-            {% for project in site.data.featured_projects %}
-                <div class="six columns">
-                    <div class="featured-card">
-                        {% if project.image %}
-                        <img class="featured-image" src="/assets/img/projects/{{ project.image }}" alt="{{ project.title }}" />
-                        {% else %}
-                        <div class="featured-image featured-icon"><i class="fa {{ project.icon }}"></i></div>
-                        {% endif %}
-                        <div class="featured-body">
-                            <p class="title">{{ project.title }}</p>
-                            <p class="description">{{ project.blurb }}</p>
-                            <p class="tags">
-                            {% for tag in project.tags %}
-                                <span class="tag">#{{ tag }}</span>
-                            {% endfor %}
-                            </p>
-                            <p class="links">
-                            {% for link in project.links %}
-                                <a href="{{ link.url }}" target="_blank">{{ link.label }} →</a>
-                            {% endfor %}
-                            </p>
+        </div>
+        <ul class="index-list posts">
+        {% for project in site.data.featured_projects %}
+            {% capture even %}{% cycle "true", "false" %}{% endcapture %}
+            {% if even == "true" %}
+                <div class="row">
+            {% endif %}
+
+            <li class="post six columns">
+                <div class="row">
+                    <div class="two columns">
+                        <div class="project-mark">
+                            {% if project.image %}
+                            <img src="/assets/img/projects/{{ project.image }}" alt="" />
+                            {% else %}
+                            <i class="fa {{ project.icon }}"></i>
+                            {% endif %}
                         </div>
                     </div>
+                    <div class="ten columns content">
+                        <p class="title"><a href="{{ project.links[0].url }}" target="_blank">{{ project.title }}</a></p>
+                        <p class="description">{{ project.blurb }}</p>
+                        <p class="description tags">
+                        {% for link in project.links %}
+                            <a href="{{ link.url }}" target="_blank">{{ link.label }} →</a>
+                        {% endfor %}
+                        </p>
+                        <p class="description tags">
+                        {% for tag in project.tags %}
+                            <a class="tag">#{{ tag }}</a>
+                        {% endfor %}
+                        </p>
+                    </div>
                 </div>
-            {% endfor %}
-            </div>
-            <p class="section-more"><a href="/projects">More projects and past work →</a></p>
-        </div>
+            </li>
+
+            {% if even == "false" or forloop.last %}
+                </div>
+            {% endif %}
+        {% endfor %}
+        </ul>
+        <p class="section-more"><a href="/projects">More projects and past work →</a></p>
     </section>
 
     <section class="latest">

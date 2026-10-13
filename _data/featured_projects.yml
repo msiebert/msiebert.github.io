@@ -1,7 +1,7 @@
 - title: Shark Fam
-  blurb: An interactive explorer for the shark family tree. Move through orders, families and genera by click, arrow keys or swipe, then meet each species as a to-scale 3D shark swimming past a diver.
-  image: shark-fam.jpg
-  tags: [TypeScript, Three.js, Vite]
+  blurb: An experiment in how far Claude can get at making 3D models. I surveyed the options (scripted Blender, AI mesh generators, three.js) and settled on parametric Blender models swimming around in three.js. It ended up a browsable shark family tree, but the sharks are a side effect. The real project is learning to make 3D with Claude.
+  image: shark-fam-mark.jpg
+  tags: [3D, Claude, Blender, three.js]
   links:
     - label: Try it
       url: https://msiebert.github.io/shark-fam/

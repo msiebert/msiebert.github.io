@@ -1,9 +1,11 @@
 /**
  * Styles for the home page: featured projects and latest posts.
+ * The rows reuse the blog list styles (.blog .posts li.post).
  */
 
 article.home {
     @light-gray: lighten(@dark, 50%);
+    @mark-size: 70px;
 
     .section-title {
         font-size: 1.6rem;
@@ -21,66 +23,33 @@ article.home {
         .container;
     }
 
-    .featured {
-        .six.columns {
-            padding: 20px 30px;
-
-            @media (max-width: @concrete-stop) {
-                padding-left: 0;
-                padding-right: 0;
-            }
-        }
+    .index-list {
+        min-height: 0;
     }
 
-    .featured-card {
+    .project-mark {
+        background-color: @dark;
         border: solid @light-gray 3px;
-        border-radius: 6px;
+        border-radius: 100%;
+        color: white;
+        height: @mark-size;
         overflow: hidden;
+        position: relative;
+        width: @mark-size;
 
-        .featured-image {
-            display: block;
-            height: 200px;
+        img {
+            height: 100%;
             object-fit: cover;
             width: 100%;
         }
 
-        .featured-icon {
-            background-color: @dark;
-            color: white;
-            align-items: center;
-            display: flex;
-            justify-content: center;
-
-            .fa {
-                font-size: 5rem;
-                text-shadow: none;
-            }
+        .fa {
+            font-size: 1.8rem;
+            left: 50%;
+            position: absolute;
+            text-shadow: none;
+            top: 50%;
+            transform: translate(-50%, -50%);
         }
-
-        .featured-body {
-            padding: 20px;
-
-            p {
-                margin: 0 0 10px;
-            }
-        }
-
-        .title {
-            color: @contrast;
-            font-size: 2rem;
-        }
-
-        .tag {
-            color: @light-gray;
-            margin-right: 8px;
-        }
-
-        .links a {
-            margin-right: 20px;
-        }
-    }
-
-    .latest .index-list {
-        min-height: 0;
     }
 }
