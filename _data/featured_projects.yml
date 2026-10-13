@@ -1,16 +1,16 @@
 - title: Shark Fam
-  blurb: An experiment in how far Claude can get at making 3D models. I surveyed the options (scripted Blender, AI mesh generators, three.js) and settled on parametric Blender models swimming around in three.js. It ended up a browsable shark family tree, but the sharks are a side effect. The real project is learning to make 3D with Claude.
+  blurb: "I wanted to find out whether Claude can make decent 3D models, and how to get it there. So we looked at a bunch of options (scripted Blender, AI mesh generators, plain three.js) and ended up with parametric Blender models swimming around in three.js. Somehow that turned into a browsable shark family tree (the sharks were honestly a side effect). The real project is learning how to make 3D things with Claude."
   image: shark-fam-mark.jpg
-  tags: [3D, Claude, Blender, three.js]
+  tags: [3d, claude, blender, threejs]
   links:
     - label: Try it
       url: https://msiebert.github.io/shark-fam/
     - label: Source
       url: https://github.com/msiebert/shark-fam
 - title: Wenchang
-  blurb: A Python library that gives AI agents persistent, self-organizing memory. It is a virtual filesystem of markdown files in GCS, exposed as tools with optimistic concurrency and scope-based authorization.
+  blurb: "AI agents forget everything between sessions, so I wrote a Python library that gives them a memory. It's a filesystem of markdown files in GCS that the agent reads and writes through tools (with optimistic concurrency so two writers don't stomp on each other, and scopes to control who can write what)."
   icon: fa-book
-  tags: [Python, AI agents, GCS]
+  tags: [python, ai, gcs]
   links:
     - label: Source
       url: https://github.com/msiebert/wenchang
