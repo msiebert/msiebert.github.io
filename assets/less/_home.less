@@ -10,21 +10,29 @@ article.home {
     .section-title {
         font-size: 1.6rem;
         margin: 0;
-        padding-top: @block-padding-vertical;
+        padding-top: 0;
         .responsive-padding;
     }
 
     .section-more {
         text-align: center;
-        margin: 10px auto 40px;
+        margin: 0 auto 20px;
     }
 
     .featured > .content, .latest > .content {
         .container;
+        padding-bottom: 0;
     }
 
     .index-list {
         min-height: 0;
+        padding-bottom: 0;
+        padding-top: 0;
+
+        li {
+            padding-bottom: 20px;
+            padding-top: 20px;
+        }
     }
 
     .project-mark {
