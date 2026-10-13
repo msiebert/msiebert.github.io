@@ -395,7 +395,7 @@ header.site-header nav a:first-child {
 article.home .section-title {
   font-size: 1.6rem;
   margin: 0;
-  padding-top: 40px;
+  padding-top: 0;
 }
 @media (max-width: 1250px) {
   article.home .section-title {
@@ -411,7 +411,7 @@ article.home .section-title {
 }
 article.home .section-more {
   text-align: center;
-  margin: 10px auto 40px;
+  margin: 0 auto 20px;
 }
 article.home .featured > .content,
 article.home .latest > .content {
@@ -420,6 +420,7 @@ article.home .latest > .content {
   max-width: 1200px;
   margin: 0 auto;
   padding: 40px 0px;
+  padding-bottom: 0;
 }
 @media (max-width: 1250px) {
   article.home .featured > .content,
@@ -441,6 +442,12 @@ article.home .latest > .content .row {
 }
 article.home .index-list {
   min-height: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+article.home .index-list li {
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 article.home .project-mark {
   background-color: #2c2c2c;
