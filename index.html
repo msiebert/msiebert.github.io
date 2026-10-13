@@ -13,6 +13,15 @@ image: fish.png
         </div>
     </header>
 
+    <section class="latest">
+        <div class="content">
+            <h2 class="section-title">Latest writing</h2>
+        </div>
+        {% assign latest = site.posts | slice: 0, 2 %}
+        {% include post-list.html posts=latest %}
+        <p class="section-more"><a href="/blog/">All posts →</a></p>
+    </section>
+
     <section class="featured">
         <div class="content">
             <h2 class="section-title">Things I'm building</h2>
@@ -58,14 +67,5 @@ image: fish.png
         {% endfor %}
         </ul>
         <p class="section-more"><a href="/projects">More projects and past work →</a></p>
-    </section>
-
-    <section class="latest">
-        <div class="content">
-            <h2 class="section-title">Latest writing</h2>
-        </div>
-        {% assign latest = site.posts | slice: 0, 2 %}
-        {% include post-list.html posts=latest %}
-        <p class="section-more"><a href="/blog/">All posts →</a></p>
     </section>
 </article>
