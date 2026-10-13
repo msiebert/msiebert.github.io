@@ -8,7 +8,7 @@ metaname: Making 3D Sharks with Claude
 image: projects/shark-fam-mark.jpg
 ---
 
-I love marine biology. I also love poking at new AI tools to see what they can actually do. Lately I'd been hearing that Claude had gotten much better at 3D, and I wanted to see for myself. Sharks seemed like the obvious subject.
+I love marine biology. I also love poking at new AI tools to see what they can actually do. Lately I'd been hearing that Claude had gotten much better at 3D, and I wanted to see for myself. On top of that, Anthropic had given me about a hundred dollars in Claude Code remote credits, and I figured a big, slightly silly project was the perfect way to put them to use while learning something. Sharks seemed like the obvious subject.
 
 So I built [Shark Fam](https://msiebert.github.io/shark-fam/), a browsable family tree of 3D sharks you can spin around and poke at. The source is on [GitHub](https://github.com/msiebert/shark-fam) if you want to look at it.
 
@@ -34,11 +34,9 @@ That loop made a big difference. It would build a shark, look at real photos and
 
 ### Letting It Run Overnight
 
-The part I had the most fun with was the last one. Once the process worked for a single shark, I wanted to see if it could do the 50 most common sharks. So I had Claude do each one in its own sub agent, and then I let it go.
+The part I had the most fun with was this one. Once the process worked for a single shark, I wanted to see if it could do the 50 most common sharks. So I had Claude do each one in its own sub agent, and then I let it go.
 
 I wasn't paying attention to it at all. I went to bed, and it kept generating models. Using a sub agent per shark kept things efficient, since each one got its own fresh context and its own round of finding references and checking its work. Waking up to a pile of finished sharks felt a little like cheating.
-
-It also helped that I had about a hundred dollars in Claude Code remote credits that Anthropic gave out. That made it easy to throw a big, slightly silly project at it without worrying about the bill. It was a nice excuse to learn something on a project I actually cared about.
 
 ### How Did It Turn Out?
 
