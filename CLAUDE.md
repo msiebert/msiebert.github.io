@@ -16,10 +16,8 @@ This is a personal blog built with Jekyll, hosted on GitHub Pages. It contains t
 
 ```
 ├── _config.yml              # Jekyll configuration
-├── _includes/               # Reusable HTML components
-│   ├── header.html
-│   ├── footer.html
-│   └── social.html
+├── _data/                   # Site data (featured_projects.yml drives the home page cards)
+├── _includes/               # Reusable HTML components (header, footer, social, post-list)
 ├── _layouts/                # Page layout templates
 │   ├── main.html           # Main layout
 │   └── post.html           # Blog post layout
@@ -32,7 +30,8 @@ This is a personal blog built with Jekyll, hosted on GitHub Pages. It contains t
 ├── presentations/          # Reveal.js presentation slides
 ├── docker/                 # Docker configuration for local development
 ├── Gemfile                 # Ruby dependencies
-├── index.html              # Home page
+├── blog/                    # Full post list at /blog/
+├── index.html              # Home page: featured projects + latest 2 posts
 └── CLAUDE.md              # This file
 
 ```
@@ -50,7 +49,8 @@ This is a personal blog built with Jekyll, hosted on GitHub Pages. It contains t
   - Topics include: web development, programming languages, Docker, data tools
   - Date-based organization: `YYYY-MM-DD-slug.md`
 
-- **Projects**: Showcased on the home page with logos and descriptions
+- **Featured projects**: Edit `_data/featured_projects.yml` to change the cards on the home page (Shark Fam, Wenchang)
+- **Projects page** (`/projects`): Employer history with logos and descriptions
   - Companies: Blue Matador, Cumulus, iEatFit, Lucid, Relate, Sharethrough
 
 - **Presentations**: Reveal.js presentations in `presentations/` directory

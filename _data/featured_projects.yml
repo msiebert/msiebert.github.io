@@ -1,0 +1,16 @@
+- title: Shark Fam
+  blurb: "I wanted to find out whether Claude can make decent 3D models, and how to get it there. So we looked at a bunch of options (scripted Blender, AI mesh generators, plain three.js) and ended up with parametric Blender models swimming around in three.js. Somehow that turned into a browsable shark family tree (the sharks were honestly a side effect). The real project is learning how to make 3D things with Claude."
+  image: shark-fam-mark.jpg
+  tags: [3d, claude, blender, threejs]
+  links:
+    - label: Try it
+      url: https://msiebert.github.io/shark-fam/
+    - label: Source
+      url: https://github.com/msiebert/shark-fam
+- title: Wenchang
+  blurb: "AI agents forget everything between sessions, so I wrote a Python library that gives them a memory. It's a filesystem of markdown files in GCS that the agent reads and writes through tools (with optimistic concurrency so two writers don't stomp on each other, and scopes to control who can write what)."
+  icon: fa-book
+  tags: [python, ai, gcs]
+  links:
+    - label: Source
+      url: https://github.com/msiebert/wenchang

@@ -1,0 +1,55 @@
+/**
+ * Styles for the home page: featured projects and latest posts.
+ * The rows reuse the blog list styles (.blog .posts li.post).
+ */
+
+article.home {
+    @light-gray: lighten(@dark, 50%);
+    @mark-size: 70px;
+
+    .section-title {
+        font-size: 1.6rem;
+        margin: 0;
+        padding-top: @block-padding-vertical;
+        .responsive-padding;
+    }
+
+    .section-more {
+        text-align: center;
+        margin: 10px auto 40px;
+    }
+
+    .featured > .content, .latest > .content {
+        .container;
+    }
+
+    .index-list {
+        min-height: 0;
+    }
+
+    .project-mark {
+        background-color: @dark;
+        border: solid @light-gray 3px;
+        border-radius: 100%;
+        color: white;
+        height: @mark-size;
+        overflow: hidden;
+        position: relative;
+        width: @mark-size;
+
+        img {
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+
+        .fa {
+            font-size: 1.8rem;
+            left: 50%;
+            position: absolute;
+            text-shadow: none;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
