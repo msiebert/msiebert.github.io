@@ -1,13 +1,39 @@
 /**
  * This less file contains the colors used in the site.
+ * Theme colors are CSS custom properties so dark mode can swap them.
  */
 
-@dark: #2c2c2c;
-@dark-shadow: lighten(black, 10%);
-@contrast: lighten(#ff0000, 10%);
-@contrast-hover: lighten(@contrast, 10%);
+// fixed colors, for the mixins that still compile them
+@dark: #15171a;
+@dark-shadow: #0b0d0f;
+@contrast: #c71f1a;
+@contrast-hover: #9d1410;
 
-// code colors
-@keyword-color: lighten(@contrast, 10%);
-@regular-text: #fff;
-@comment-color: #aaa;
+:root {
+    --paper: #f1f2f0;
+    --wash: #e7eae8;
+    --ink: #15171a;
+    --muted: #56616a;
+    --rule: #cdd2d0;
+    --koi: #c71f1a;
+    --koi-hover: #9d1410;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --paper: #0e1214;
+        --wash: #161d20;
+        --ink: #e8ebe9;
+        --muted: #8e9aa2;
+        --rule: #263034;
+        --koi: #ff5a4f;
+        --koi-hover: #ff8077;
+    }
+}
+
+// code colors (code blocks are ink-dark in both themes)
+@keyword-color: #ff7a70;
+@string-color: #b9d8a9;
+@number-color: #e8c27a;
+@regular-text: #e8ebe9;
+@comment-color: #7f8b92;

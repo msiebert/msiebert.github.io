@@ -3,88 +3,88 @@
  */
 
 .index-list.projects {
-    @image-size: 100px;
-    @light-gray: lighten(@dark, 50%);
+    .container;
+    padding-bottom: 4rem;
+    padding-top: 1rem;
+    list-style: none;
+
+    display: grid;
+    gap: 0 3rem;
+    grid-template-columns: 1fr 1fr;
+
+    @media (max-width: @half-width-stop) {
+        grid-template-columns: 1fr;
+    }
+
+    // The markup groups items in rows; let the grid flow across them.
+    .row {
+        display: contents;
+    }
 
     li {
-        .responsive-padding;
-        text-align: center;
-
-        .description {
-            text-align: justify;
-
-            @media (max-width: @concrete-stop) {
-                border: none;
-                padding-left: 0;
-            }
-        }
+        border-top: 1px solid var(--rule);
+        list-style: none;
+        padding: 2rem 0;
+        text-align: left;
     }
 
     .project-picture {
-        border-radius: 100%;
-        border: solid @light-gray 4px;
+        background: var(--wash);
+        border-radius: 50%;
         display: block;
-        height: @image-size;
-        margin: auto;
-        padding: 10px;
+        height: 5.5rem;
+        margin: 0 0 1rem;
+        overflow: hidden;
         position: relative;
-        width: @image-size;
+        width: 5.5rem;
     }
 
-    .blue-matador img, .relate img, .cumulus img, .mixpanel img {
-      width: 80%;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 10%;
+    .project-picture img {
+        height: 70%;
+        left: 15%;
+        object-fit: contain;
+        position: absolute;
+        top: 15%;
+        width: 70%;
     }
 
-    .sharethrough img {
-        border-radius: 30px;
+    .shark-fam img, .sharethrough img {
+        border-radius: 50%;
         height: 100%;
+        left: 0;
+        object-fit: cover;
+        top: 0;
         width: 100%;
     }
 
-    .shark-fam {
-        overflow: hidden;
-
-        img {
-            border-radius: 100%;
-            height: 100%;
-            left: 0;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            width: 100%;
-        }
-    }
+    .cumulus { background: #0f3542; }
 
     .wenchang {
-        background-color: @dark;
-        color: white;
+        background: var(--ink);
+        color: var(--paper);
 
         .fa {
-            font-size: 2.5rem;
+            font-size: 2rem;
             left: 50%;
             position: absolute;
-            text-shadow: none;
             top: 50%;
             transform: translate(-50%, -50%);
         }
     }
 
-    .cumulus {
-      background-color: #0f3542;
-    }
+    p { margin: 0; }
 
     .title {
-        margin-top: 10px;
+        .display;
+        font-size: 1.55rem;
+        font-weight: 500;
+        margin-bottom: 0.4rem;
 
-        a {
-            border-bottom: solid @light-gray 3px;
-            padding: 5px 20px;
-            padding-bottom: 0;
-        }
+        a { color: var(--ink); }
+        a:hover { color: var(--koi); text-decoration: none; }
     }
 
+    .description {
+        max-width: 34rem;
+    }
 }

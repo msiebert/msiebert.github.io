@@ -1,121 +1,72 @@
+/** Styles for blog posts. */
+
 article.post {
-    .social-buttons {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-
-        a {
-            padding-left: 10px;
-
-            &:first-child {
-                padding-left: 0;
-            }
-        }
-
-        @media (max-width: @screen-max-width-stop) {
-            right: @full-screen-padding;
-        }
-
-        @media (max-width: @tiny-stop) {
-            top: @block-padding-vertical + 6;
-            transform: none;
-        }
+    // Align the title with the reading column below it.
+    .header .content {
+        max-width: @measure;
     }
 
     .post-content {
-        padding: 50px 0px;
+        padding: 1.5rem 0 3rem;
 
-        p {
-            .responsive-padding;
+        > * {
+            margin-left: auto;
+            margin-right: auto;
+            max-width: @measure;
+            padding-left: @gutter;
+            padding-right: @gutter;
         }
 
-        h1, h2, h3, h4, h5, h6 {
-            .with-max-width;
-            .responsive-padding;
+        > .highlight, > div.highlighter-rouge {
+            max-width: none;
+            padding: 0;
+        }
+
+        p, li {
+            font-size: 1.1rem;
+            line-height: 1.75;
+        }
+
+        h2, h3 {
+            margin-bottom: 0.5rem;
+            margin-top: 2.5rem;
+        }
+
+        h2 { font-size: 1.7rem; }
+        h3 { font-size: 1.35rem; }
+
+        blockquote {
+            border-left: 3px solid var(--koi);
+            color: var(--muted);
+            margin-left: auto;
+            margin-right: auto;
         }
 
         img {
             display: block;
-            margin: 40px auto;
-            padding: 10px;
-            box-shadow: 1px 1px 8px gray;
-            max-width: 95%;
+            height: auto;
+            margin: 2.5rem auto;
+            max-width: min(100%, 48rem);
+        }
+
+        :not(pre) > code {
+            background: var(--wash);
+            border-radius: 3px;
+            font-size: 0.92em;
+            padding: 0.1em 0.35em;
         }
     }
 
-    .header.comments {
-        .title {
-            font-size: 2rem;
-        }
-
-        .description {
-            margin-top: 5px;
-        }
+    .comments-block {
+        .container;
+        border-top: 1px solid var(--rule);
+        max-width: @measure;
+        padding-top: 2rem;
     }
 
     #disqus_thread {
         .container;
-    }
-}
-
-.blog {
-    .posts {
-        li.post {
-            .publish-date {
-                @base-day-font: 1.8rem;
-
-                .day {
-                    font-size: @base-day-font;
-                }
-
-                .year {
-                    font-size: @font-size - .3;
-                }
-
-                @media (max-width: @screen-max-width) {
-                    .day {
-                        font-size: @base-day-font - .2;
-                    }
-
-                    .month {
-                        font-size: @font-size - .1;
-                    }
-                }
-
-                @media (max-width: @three-quarters-stop) {
-                    .day {
-                        font-size: @base-day-font - .4;
-                    }
-
-                    .month {
-                        font-size: @font-size - .2;
-                    }
-                }
-            }
-
-            .content {
-                .tags {
-                    border-left-color: @contrast;
-                    color: @contrast;
-                }
-            }
-
-        }
-    }
-
-    .index-list {
-        li {
-            @media (max-width: @concrete-stop) {
-                .columns {
-                    float: left;
-                }
-
-                .content {
-                    padding-left: 20px;
-                    width: 80%;
-                }
-            }
-        }
+        max-width: @measure;
+        padding-bottom: 3rem;
     }
 }

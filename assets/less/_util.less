@@ -3,71 +3,21 @@
  */
 @import '_vars';
 
-.with-max-width {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: @screen-max-width;
-}
-
-.responsive-padding {
-    @media (max-width: @screen-max-width-stop) {
-        padding-left: @full-screen-padding;
-        padding-right: @full-screen-padding;
-    }
-
-    @media (max-width: @half-width-stop) {
-        padding-left: @full-screen-padding / 2;
-        padding-right: @full-screen-padding / 2;
-    }
-}
-
 .container {
-    .with-max-width;
-    .responsive-padding;
     margin: 0 auto;
-    padding: @block-padding-vertical @block-padding-horizontal;
-
-    .row {
-        min-width: 0;
-    }
+    max-width: @screen-max-width;
+    padding-left: @gutter;
+    padding-right: @gutter;
 }
 
-.horizontal-bar(@color) {
-    background-color: @dark;
-    color: white;
+.horizontal-bar() {
+    background-color: var(--code-bg, #0f1214);
+    color: #e8ebe9;
 }
 
-.circle-image(@color, @height) {
-    border-radius: 100%;
-    border: solid @color 3px;
-    box-shadow: 0px 0px 10px 2px darken(@color, 50%);
-    height: @height;
-    left: -200px;
-    position: absolute;
-    text-align: center;
-    top: 50%;
-    width: @height;
-}
-
-.chinese-character(@content, @color) {
-    @character-height: 100px;
-    @character-padding: 20px;
-    position: relative;
-
-    &::before {
-        .circle-image(@color, @character-height);
-        color: @color;
-        content: @content;
-        font-family: 'Noto Sans SC', 'Microsoft YaHei', 'SimSun', 'STHeiti', 'PingFang SC', sans-serif;
-        font-size: @character-height - 30;
-        height: @character-height;
-        margin-top: calc(-@character-height / 2 - @character-padding);
-        text-shadow: 1px 4px 6px darken(@dark, 20%), 0 0 0 #000, 1px 4px 6px darken(@dark, 20%);
-        padding: @character-padding;
-
-        @media (max-width: @large-screen-stop) {
-            display: none;
-        }
-    }
-
+.display {
+    font-family: @font-display;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    line-height: 1.15;
 }

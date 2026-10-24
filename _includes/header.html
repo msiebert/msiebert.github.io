@@ -1,15 +1,12 @@
-<header class="site-header">
+<header class="site-header{% if page.url == '/' %} on-home{% endif %}">
     <div class="content">
-        <div class="logo-container">
-            <a href="/">
-                <img class="logo" src="/assets/img/fish.png" />
-                <h3>Binary Nirvana</h3>
-            </a>
-        </div>
+        <a class="brand" href="/">
+            <img src="/assets/img/fish.png" alt="" />
+            <span>Binary Nirvana</span>
+        </a>
         <nav>
-            <a href="/">Home</a>
-            <a href="/blog/">Blog</a>
-            <a href="/projects">Projects</a>
+            <a href="/blog/"{% if page.url contains '/blog' %} aria-current="page"{% endif %}>Blog</a>
+            <a href="/projects/"{% if page.url contains '/projects' %} aria-current="page"{% endif %}>Projects</a>
         </nav>
     </div>
 </header>
