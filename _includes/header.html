@@ -1,7 +1,10 @@
 <header class="site-header{% if page.url == '/' %} on-home{% endif %}">
     <div class="content">
         <a class="brand" href="/">
-            <img src="/assets/img/fish.png" alt="" />
+            <picture>
+                <source srcset="/assets/img/fish-dark.png" media="(prefers-color-scheme: dark)">
+                <img src="/assets/img/fish.png" alt="" />
+            </picture>
             <span>Binary Nirvana</span>
         </a>
         <nav>

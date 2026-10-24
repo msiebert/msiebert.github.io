@@ -254,12 +254,6 @@ header.site-header nav a:hover {
 header.site-header nav a[aria-current="page"] {
   border-bottom-color: var(--koi);
 }
-@media (prefers-color-scheme: dark) {
-  header.site-header .brand img {
-    background: #e8ebe9;
-    border-radius: 50%;
-  }
-}
 /**
  * Styles for the home page: the pond hero, latest posts, featured projects.
  */
@@ -303,13 +297,22 @@ article.home .pond {
   position: relative;
   width: min(100%, 21rem);
 }
-article.home .pond img {
+article.home .pond picture {
   display: block;
   height: 100%;
   position: relative;
+  z-index: 1;
+}
+article.home .pond img {
+  display: block;
+  height: 100%;
   mix-blend-mode: multiply;
   width: 100%;
-  z-index: 1;
+}
+@media (prefers-color-scheme: dark) {
+  article.home .pond img {
+    mix-blend-mode: normal;
+  }
 }
 article.home .pond .ring {
   animation: ripple 3.2s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
@@ -410,13 +413,6 @@ article.home .project-mark img {
   object-fit: cover;
   width: 100%;
 }
-@media (prefers-color-scheme: dark) {
-  article.home .pond img {
-    background: #e8ebe9;
-    border-radius: 50%;
-    mix-blend-mode: normal;
-  }
-}
 @keyframes ripple {
   from {
     opacity: 0;
@@ -514,6 +510,11 @@ article.home .project-mark img {
 }
 .index-list.projects .description {
   max-width: 34rem;
+}
+@media (prefers-color-scheme: dark) {
+  .index-list.projects .project-picture:not(.wenchang):not(.cumulus):not(.shark-fam) {
+    background: #e8ebe9;
+  }
 }
 *,
 *::before,

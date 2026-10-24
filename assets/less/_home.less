@@ -44,13 +44,22 @@ article.home {
         position: relative;
         width: min(100%, 21rem);
 
-        img {
+        picture {
             display: block;
             height: 100%;
             position: relative;
+            z-index: 1;
+        }
+
+        img {
+            display: block;
+            height: 100%;
             mix-blend-mode: multiply;
             width: 100%;
-            z-index: 1;
+
+            @media (prefers-color-scheme: dark) {
+                mix-blend-mode: normal;
+            }
         }
 
         .ring {
@@ -148,15 +157,6 @@ article.home {
             object-fit: cover;
             width: 100%;
         }
-    }
-}
-
-@media (prefers-color-scheme: dark) {
-    // Keep the koi true to color: set them on a pale pond disc.
-    article.home .pond img {
-        background: #e8ebe9;
-        border-radius: 50%;
-        mix-blend-mode: normal;
     }
 }
 

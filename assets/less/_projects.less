@@ -88,3 +88,10 @@
         max-width: 34rem;
     }
 }
+
+// Third-party logos are drawn for white backgrounds, so keep a pale badge behind them in dark mode.
+@media (prefers-color-scheme: dark) {
+    .index-list.projects .project-picture:not(.wenchang):not(.cumulus):not(.shark-fam) {
+        background: #e8ebe9;
+    }
+}

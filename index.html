@@ -13,7 +13,10 @@ image: fish.png
         </div>
         <div class="pond" aria-hidden="true">
             <span class="ring"></span><span class="ring"></span><span class="ring"></span>
-            <img src="/assets/img/fish.png" alt="" />
+            <picture>
+                <source srcset="/assets/img/fish-dark.png" media="(prefers-color-scheme: dark)">
+                <img src="/assets/img/fish.png" alt="" />
+            </picture>
         </div>
     </header>
 
