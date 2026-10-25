@@ -51,10 +51,11 @@ article.home {
             z-index: 1;
         }
 
+        // No display here: it would beat .dark-only/.light-only and show both variants.
         img {
-            display: block;
             height: 100%;
             mix-blend-mode: multiply;
+            vertical-align: top;
             width: 100%;
 
             .dark-theme({
