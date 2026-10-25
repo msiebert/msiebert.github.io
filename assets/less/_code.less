@@ -9,11 +9,11 @@ div.highlight {
     margin: 2.5rem 0;
 
     // The page is already near-black in dark mode, so go darker and edge the band.
-    @media (prefers-color-scheme: dark) {
+    .dark-theme({
         --code-bg: #05080a;
         border-bottom: 1px solid var(--rule);
         border-top: 1px solid var(--rule);
-    }
+    });
 
     pre {
         .container;

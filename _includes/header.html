@@ -1,15 +1,19 @@
 <header class="site-header{% if page.url == '/' %} on-home{% endif %}">
     <div class="content">
         <a class="brand" href="/">
-            <picture>
-                <source srcset="/assets/img/fish-dark.png" media="(prefers-color-scheme: dark)">
-                <img src="/assets/img/fish.png" alt="" />
+            <picture class="fish">
+                <img class="light-only" src="/assets/img/fish.png" alt="" />
+                <img class="dark-only" src="/assets/img/fish-dark.png" alt="" />
             </picture>
             <span>Binary Nirvana</span>
         </a>
         <nav>
             <a href="/blog/"{% if page.url contains '/blog' %} aria-current="page"{% endif %}>Blog</a>
             <a href="/projects/"{% if page.url contains '/projects' %} aria-current="page"{% endif %}>Projects</a>
+            <button type="button" class="theme-toggle" data-theme-toggle hidden>
+                <i class="fa" aria-hidden="true"></i>
+                <span class="sr-only"></span>
+            </button>
         </nav>
     </div>
 </header>

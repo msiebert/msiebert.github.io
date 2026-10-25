@@ -51,6 +51,23 @@ img {
     max-width: 100%;
 }
 
+.sr-only {
+    clip: rect(0 0 0 0);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+// Fish logo has a light and a dark variant; show the one matching the active theme.
+.dark-only { display: none; }
+
+.dark-theme({
+    .light-only { display: none; }
+    .dark-only { display: block; }
+});
+
 // Page headers for blog, projects and posts.
 .header {
     .content {
