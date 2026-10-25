@@ -427,9 +427,9 @@ article.home .pond picture {
   z-index: 1;
 }
 article.home .pond img {
-  display: block;
   height: 100%;
   mix-blend-mode: multiply;
+  vertical-align: top;
   width: 100%;
 }
 @media (prefers-color-scheme: dark) {
