@@ -40,6 +40,8 @@ This means the limiting factor isn't technical skill anymore, at least not in th
 
 Bias towards action used to mean being willing to take on risk. Now it also means being willing to use tools that let you derisk dramatically, and still choosing to act anyway.
 
+---
+
 ### Back to Huntington Beach
 
 To be clear, the conversations at the retreat were interesting. The honest reality is that nobody has a clean strategy for AI right now. It's genuinely hard to know what's coming or what the right choices are. There are a lot of smart people with a lot of different opinions, and the landscape keeps shifting.

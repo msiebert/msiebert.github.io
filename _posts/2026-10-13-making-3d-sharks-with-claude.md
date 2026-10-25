@@ -38,6 +38,8 @@ The part I had the most fun with was this one. Once the process worked for a sin
 
 I wasn't paying attention to it at all. I went to bed, and it kept generating models. Using a sub agent per shark kept things efficient, since each one got its own fresh context and its own round of finding references and checking its work. Waking up to a pile of finished sharks felt a little like cheating.
 
+---
+
 ### How Did It Turn Out?
 
 It's not perfect. Some of the sharks aren't completely accurate, and the UX could definitely use some work. I'm a backend developer by trade, and it shows.
