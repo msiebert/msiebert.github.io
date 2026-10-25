@@ -6,10 +6,12 @@ layout: main
         <div class="content">
             <h1 class="title">{{ page.title }}</h1>
             <p class="description">{{ page.description }}</p>
+            <p class="byline"><span class="seal seal-small" aria-hidden="true">鯉</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
         </div>
     </header>
     <div class="post-content">
         {{ content }}
+        <div class="end-mark" aria-hidden="true"><span class="seal">鯉</span></div>
     </div>
 
     <div class="comments-block">

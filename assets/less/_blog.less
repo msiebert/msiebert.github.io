@@ -35,11 +35,50 @@ article.post {
         h2 { font-size: 1.7rem; }
         h3 { font-size: 1.35rem; }
 
+        // A tapered red brush stroke instead of a plain border.
         blockquote {
-            border-left: 3px solid var(--koi);
-            color: var(--muted);
-            margin-left: auto;
-            margin-right: auto;
+            .display;
+            font-size: 1.35rem;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+            margin-top: 2rem;
+            padding-left: calc(@gutter + 1.25rem);
+            position: relative;
+
+            &::before {
+                background: var(--koi);
+                bottom: 0.3rem;
+                clip-path: polygon(20% 0, 100% 3%, 65% 55%, 90% 100%, 0 96%, 35% 45%);
+                content: '';
+                left: @gutter;
+                position: absolute;
+                top: 0.3rem;
+                width: 7px;
+            }
+
+            p {
+                font-size: inherit;
+                line-height: inherit;
+                margin: 0;
+            }
+
+            p + p {
+                margin-top: 0.75rem;
+            }
+        }
+
+        // Ripple divider, echoing the rings around the koi.
+        hr {
+            background: var(--rule);
+            border: 0;
+            height: 1.6rem;
+            margin-bottom: 2.5rem;
+            margin-top: 2.5rem;
+            -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 26'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.4'%3E%3Cellipse cx='60' cy='13' rx='6' ry='3'/%3E%3Cellipse cx='60' cy='13' rx='20' ry='7'/%3E%3Cellipse cx='60' cy='13' rx='38' ry='11'/%3E%3Cellipse cx='60' cy='13' rx='58' ry='12.5'/%3E%3C/g%3E%3C/svg%3E") center / 7.5rem 1.6rem no-repeat;
+            mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 26'%3E%3Cg fill='none' stroke='%23000' stroke-width='1.4'%3E%3Cellipse cx='60' cy='13' rx='6' ry='3'/%3E%3Cellipse cx='60' cy='13' rx='20' ry='7'/%3E%3Cellipse cx='60' cy='13' rx='38' ry='11'/%3E%3Cellipse cx='60' cy='13' rx='58' ry='12.5'/%3E%3C/g%3E%3C/svg%3E") center / 7.5rem 1.6rem no-repeat;
+            max-width: none;
+            padding: 0;
         }
 
         img {
@@ -57,9 +96,23 @@ article.post {
         }
     }
 
+    .byline {
+        align-items: center;
+        color: var(--muted);
+        display: flex;
+        font-size: 0.95rem;
+        gap: 0.6rem;
+        margin: 1.5rem 0 0;
+    }
+
+    .end-mark {
+        padding-bottom: 0;
+        padding-top: 2.5rem;
+    }
+
     .comments-block {
         .container;
-        border-top: 1px solid var(--rule);
+        background: linear-gradient(var(--rule), var(--rule)) no-repeat 1.5rem 0 / calc(100% - 3rem) 1px;
         max-width: @measure;
         padding-top: 2rem;
     }

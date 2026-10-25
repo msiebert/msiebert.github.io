@@ -3,16 +3,23 @@
  * Code blocks stay ink-dark in both themes.
  */
 
-.highlight {
+div.highlight {
     --code-bg: #0f1214;
     .horizontal-bar();
     margin: 2.5rem 0;
 
+    // The page is already near-black in dark mode, so go darker and edge the band.
+    @media (prefers-color-scheme: dark) {
+        --code-bg: #05080a;
+        border-bottom: 1px solid var(--rule);
+        border-top: 1px solid var(--rule);
+    }
+
     pre {
         .container;
         color: @regular-text;
-        margin: 0;
-        max-width: 56rem;
+        margin: 0 auto;
+        max-width: @measure;
         padding-bottom: 1.5rem;
         padding-top: 1.5rem;
 
