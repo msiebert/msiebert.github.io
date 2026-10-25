@@ -5,67 +5,49 @@ metaname: Binary Nirvana
 description: One half Asian's ruminations on the path to digital enlightenment.
 image: fish.png
 ---
-<article class="blog home">
-    <header class="header">
-        <div class="content">
-            <h1 class="title">Binary Nirvana</h1>
-            <p class="description">One half Asian's ruminations on the path to digital enlightenment.</p>
+<article class="home">
+    <header class="hero">
+        <div class="hero-text">
+            <h1 class="hero-title">Binary Nirvana</h1>
+            <p class="hero-tagline">One half Asian's ruminations on the path to digital enlightenment.</p>
+        </div>
+        <div class="pond" aria-hidden="true">
+            <span class="ring"></span><span class="ring"></span><span class="ring"></span>
+            <picture>
+                <source srcset="/assets/img/fish-dark.png" media="(prefers-color-scheme: dark)">
+                <img src="/assets/img/fish.png" alt="" />
+            </picture>
         </div>
     </header>
 
     <section class="latest">
-        <div class="content">
-            <h2 class="section-title">Latest writing</h2>
-        </div>
+        <h2 class="section-title">Latest writing</h2>
         {% assign latest = site.posts | slice: 0, 2 %}
         {% include post-list.html posts=latest %}
-        <p class="section-more"><a href="/blog/">All posts →</a></p>
+        <p class="section-more"><a href="/blog/">All posts</a></p>
     </section>
 
     <section class="featured">
-        <div class="content">
-            <h2 class="section-title">Things I'm building</h2>
-        </div>
-        <ul class="index-list posts">
+        <h2 class="section-title">Things I'm building</h2>
+        <ul class="projects-list">
         {% for project in site.data.featured_projects %}
-            {% capture even %}{% cycle "true", "false" %}{% endcapture %}
-            {% if even == "true" %}
-                <div class="row">
-            {% endif %}
-
-            <li class="post six columns">
-                <div class="row">
-                    <div class="two columns">
-                        <div class="project-mark">
-                            {% if project.image %}
-                            <img src="/assets/img/projects/{{ project.image }}" alt="" />
-                            {% else %}
-                            <i class="fa {{ project.icon }}"></i>
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="ten columns content">
-                        <p class="title"><a href="{{ project.links[0].url }}" target="_blank">{{ project.title }}</a></p>
-                        <p class="description">{{ project.blurb }}</p>
-                        <p class="description tags">
-                        {% for link in project.links %}
-                            <a href="{{ link.url }}" target="_blank">{{ link.label }} →</a>
-                        {% endfor %}
-                        </p>
-                        <p class="description tags">
-                        {% for tag in project.tags %}
-                            <a class="tag">#{{ tag }}</a>
-                        {% endfor %}
-                        </p>
-                    </div>
+            <li>
+                <div class="project-mark" aria-hidden="true">
+                    {% if project.image %}<img src="/assets/img/projects/{{ project.image }}" alt="" />{% else %}{{ project.glyph }}{% endif %}
+                </div>
+                <div>
+                    <p class="title"><a href="{{ project.links[0].url }}" target="_blank" rel="noopener">{{ project.title }}</a></p>
+                    <p class="blurb">{{ project.blurb }}</p>
+                    <p class="links">
+                    {% for link in project.links %}
+                        <a href="{{ link.url }}" target="_blank" rel="noopener">{{ link.label }}</a>
+                    {% endfor %}
+                    </p>
+                    <p class="tags">{% for tag in project.tags %}<span>#{{ tag }}</span>{% endfor %}</p>
                 </div>
             </li>
-
-            {% if even == "false" or forloop.last %}
-                </div>
-            {% endif %}
         {% endfor %}
         </ul>
-        <p class="section-more"><a href="/projects">More projects and past work →</a></p>
+        <p class="section-more"><a href="/projects/">More projects and past work</a></p>
     </section>
 </article>

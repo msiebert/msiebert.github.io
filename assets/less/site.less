@@ -1,113 +1,162 @@
+@import '_vars';
+@import '_colors';
+@import '_util';
 @import '_blog';
 @import '_code';
-@import '_colors';
 @import '_footer';
 @import '_header';
 @import '_home';
 @import '_projects';
-@import '_util';
-@import '_vars';
 
-// @import url(http://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic);
-// @import url(http://fonts.googleapis.com/css?family=Noto:400,700,400italic,700italic);
-@import (css) url(https://fonts.googleapis.com/css?family=Roboto:700italic,300,700,300italic);
+@import (css) url(https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600&family=Shippori+Mincho:wght@500;800&display=swap);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 html {
-    font-family: 'Roboto';
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
-    color: @dark;
-    font-size: @font-size;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: @font-text;
+    font-size: 1.0625rem;
+    line-height: 1.65;
     margin: 0;
-    line-height: 1.4;
-
-    .fa {
-        font-size: 2.2rem;
-        text-shadow: 2px 2px 2px black;
-
-        &:hover {
-            text-shadow: 1px 1px 2px black;
-        }
-    }
 }
 
-p, ul, li, ol {
-    .with-max-width;
+h1, h2, h3, h4 {
+    .display;
 }
 
 a {
-    color: @contrast;
+    color: var(--koi);
     text-decoration: none;
 
     &:hover {
-        color: @contrast-hover;
-        text-decoration: none;
+        color: var(--koi-hover);
+        text-decoration: underline;
+        text-underline-offset: 0.2em;
+    }
+
+    &:focus-visible {
+        outline: 2px solid var(--koi);
+        outline-offset: 3px;
     }
 }
 
-.header {
-    .horizontal-bar(@dark);
-    position: relative;
+img {
+    max-width: 100%;
+}
 
+// Page headers for blog, projects and posts.
+.header {
     .content {
         .container;
-        position: relative;
+        padding-bottom: 1.5rem;
+        padding-top: 4rem;
     }
 
     .title {
-        font-size: 2.4rem;
+        font-size: clamp(2.2rem, 5vw, 3.2rem);
         margin: 0;
+        max-width: 22ch;
     }
 
     .description {
-        margin-bottom: 0;
-        color: darken(white, 20%);
+        color: var(--muted);
+        font-size: 1.2rem;
+        margin: 1rem 0 0;
+        max-width: @measure;
     }
 }
 
-.index-list {
-    .container;
-    min-height: 300px;
-    padding-left: 0px;
+.section-title {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+}
 
-    .six.columns {
-        padding-left: 30px;
-        padding-right: 30px;
+.section-more {
+    margin: 1.5rem 0 0;
+}
 
-        @media (max-width: @concrete-stop) {
-            padding-left: 0px;
-            padding-right: 0px;
+// Dated entries: posts on the home page and the blog index.
+.entries {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        border-top: 1px solid var(--rule);
+        display: grid;
+        gap: 0.25rem 2rem;
+        grid-template-columns: 7rem 1fr;
+        padding: 1.4rem 0;
+
+        &:last-child {
+            border-bottom: 1px solid var(--rule);
         }
     }
 
-    li {
-        list-style: none;
-        padding-bottom: 40px;
-        padding-top: 40px;
+    time {
+        color: var(--muted);
+        font-size: 0.95rem;
+        padding-top: 0.45rem;
+    }
 
-        p {
-            margin: 0;
-        }
+    .title {
+        .display;
+        font-size: 1.55rem;
+        font-weight: 500;
+        margin: 0;
 
-        .title {
-            @base-title-font: 2rem;
+        a {
+            color: var(--ink);
 
-            color: @contrast;
-            font-size: @base-title-font;
-            margin-bottom: 10px;
-
-            @media (max-width: @screen-max-width) {
-                font-size: @base-title-font - .2;
-            }
-
-            @media (max-width: @three-quarters-stop) {
-                font-size: @base-title-font - .4;
+            &:hover {
+                color: var(--koi);
+                text-decoration: none;
             }
         }
+    }
 
-        .description {
-            border-left: solid @dark 3px;
-            padding-left: 20px;
+    .blurb {
+        color: var(--muted);
+        margin: 0.4rem 0 0;
+        max-width: @measure;
+    }
+
+    .tags {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin: 0.5rem 0 0;
+
+        span {
+            margin-right: 0.8rem;
         }
+    }
+
+    @media (max-width: @half-width-stop) {
+        li {
+            grid-template-columns: 1fr;
+        }
+
+        time {
+            padding-top: 0;
+        }
+    }
+}
+
+.list-page {
+    .container;
+    padding-bottom: 4rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
     }
 }

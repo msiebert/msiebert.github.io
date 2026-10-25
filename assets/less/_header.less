@@ -2,91 +2,63 @@
  * Styles for the site header.
  */
 
-@import '_colors';
-@import '_util';
-
 header.site-header {
-    @font-height: 1.0rem;
-    @logo-size: 125px;
-
-    position: relative;
-
     .content {
         .container;
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+        padding-top: 1.25rem;
     }
 
-    .logo-container {
-        display: inline-block;
-        height: @logo-size + @font-height * 2;
-        padding-right: 50px;
-        width: @logo-size;
+    .brand {
+        align-items: center;
+        color: var(--ink);
+        display: inline-flex;
+        gap: 0.7rem;
 
-        .logo {
-            height: @logo-size * .85;
-            width: @logo-size;
-            display: inline;
-        }
-
-        a {
+        &:hover {
+            color: var(--ink);
             text-decoration: none;
-            color: @dark;
-
-            &:hover {
-                text-decoration: none;
-                color: @dark;
-            }
         }
 
-        h3 {
-            display: block;
-            font-size: @font-height;
-            letter-spacing: 6px;
-            line-height: @font-height;
-            margin-top: 5px;
-            text-align: center;
-            width: @logo-size;
+        img {
+            height: 2.6rem;
+            width: 2.6rem;
         }
 
-        @media (max-width: @half-width-stop) {
-            display: block;
-            margin: auto;
-            padding: 0;
-
-            h3 {
-                width: auto;
-            }
+        span {
+            .display;
+            font-size: 1.2rem;
+            font-weight: 500;
         }
+    }
 
+    // On the home page the hero carries the name.
+    &.on-home .brand span {
+        position: absolute;
+        left: -9999px;
     }
 
     nav {
-        @link-spacing: 30px;
-
-        float: right !important;
-        line-height: @logo-size + @font-height * 2;
+        display: flex;
+        gap: 1.75rem;
 
         a {
-            color: @dark;
-            font-size: 1.8rem;
-            margin-left: @link-spacing;
-            text-decoration: none;
-            vertical-align: bottom;
+            border-bottom: 2px solid transparent;
+            color: var(--ink);
+            padding: 0.2rem 0;
 
-            &:first-child {
-                margin-left: 0;
+            &:hover {
+                border-bottom-color: var(--rule);
+                text-decoration: none;
             }
-        }
 
-        @media (max-width: @half-width-stop) {
-            display: block;
-            float: none !important;
-            line-height: normal;
-            margin-top: 40px;
-            text-align: center;
-
-            a {
-                font-size: 1.5rem;
+            &[aria-current="page"] {
+                border-bottom-color: var(--koi);
             }
         }
     }
 }
+

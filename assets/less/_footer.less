@@ -1,70 +1,35 @@
 /** Styles for the site footer */
-@import '_colors';
-@import '_util';
-@import '_vars';
 
 footer.site-footer {
-    @less-dark: lighten(@dark, 60%);
-    background-color: @dark;
-    color: white;
+    border-top: 1px solid var(--rule);
+    margin-top: 2rem;
 
     .content {
         .container;
+        align-items: center;
+        display: flex;
+        gap: 2rem;
+        padding-bottom: 3.5rem;
+        padding-top: 2.5rem;
 
-        a {
-            color: @contrast;
-            text-decoration: none;
-
-            &:hover {
-                color: @contrast-hover;
-                text-decoration: none;
-            }
+        @media (max-width: @half-width-stop) {
+            align-items: flex-start;
+            flex-direction: column;
+            gap: 1rem;
         }
+    }
 
-        .bio-picture {
-            @picture-max-width: 115px;
-            text-align: center;
+    .bio-picture img {
+        border-radius: 50%;
+        display: block;
+        height: 5.5rem;
+        object-fit: cover;
+        width: 5.5rem;
+    }
 
-            img {
-                border-radius: 100%;
-                border: solid white 3px;
-                width: 100%;
-
-                max-width: @picture-max-width;
-                max-height: @picture-max-width;
-            }
-
-            nav {
-                @icon-padding: 20px;
-
-                display: block;
-                margin-top: 10px;
-                min-width: 25px;
-
-                p {
-                    display: inline;
-                }
-
-                a {
-                    padding-left: @icon-padding;
-
-                    &:first-child {
-                        padding-left: 0;
-                    }
-                }
-            }
-        }
-
-        .bio {
-            @media (max-width: 900px) {
-                margin-top: 10px;
-            }
-
-            @media (max-width: @concrete-stop) {
-                text-align: justify;
-            }
-        }
-
-
+    .bio {
+        color: var(--muted);
+        margin: 0;
+        max-width: 46rem;
     }
 }

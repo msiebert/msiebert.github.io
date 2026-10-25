@@ -1,63 +1,168 @@
 /**
- * Styles for the home page: featured projects and latest posts.
- * The rows reuse the blog list styles (.blog .posts li.post).
+ * Styles for the home page: the pond hero, latest posts, featured projects.
  */
 
 article.home {
-    @light-gray: lighten(@dark, 50%);
-    @mark-size: 70px;
-
-    .section-title {
-        font-size: 1.6rem;
-        margin: 0;
-        padding-top: 0;
-        .responsive-padding;
-    }
-
-    .section-more {
-        text-align: center;
-        margin: 0 auto 20px;
-    }
-
-    .featured > .content, .latest > .content {
+    .hero {
         .container;
-        padding-bottom: 0;
+        align-items: center;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1.2fr 1fr;
+        padding-bottom: 4rem;
+        padding-top: 3rem;
+
+        .hero-title {
+            font-size: clamp(3.2rem, 9vw, 6.4rem);
+            line-height: 1;
+            margin: 0;
+        }
+
+        .hero-tagline {
+            color: var(--muted);
+            font-size: 1.3rem;
+            margin: 1.5rem 0 0;
+            max-width: 26ch;
+        }
+
+        @media (max-width: @half-width-stop) {
+            grid-template-columns: 1fr;
+            padding-top: 1rem;
+
+            .pond {
+                margin: 2rem auto;
+                order: -1;
+                width: min(60vw, 14rem);
+            }
+        }
     }
 
-    .index-list {
-        min-height: 0;
-        padding-bottom: 0;
-        padding-top: 0;
+    // The koi pair with rings that settle once on load.
+    .pond {
+        aspect-ratio: 1;
+        margin: 0 auto;
+        position: relative;
+        width: min(100%, 21rem);
 
-        li {
-            padding-bottom: 20px;
-            padding-top: 20px;
+        picture {
+            display: block;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        img {
+            display: block;
+            height: 100%;
+            mix-blend-mode: multiply;
+            width: 100%;
+
+            @media (prefers-color-scheme: dark) {
+                mix-blend-mode: normal;
+            }
+        }
+
+        .ring {
+            animation: ripple 3.2s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
+            border: 1px solid var(--rule);
+            border-radius: 50%;
+            inset: 0;
+            position: absolute;
+
+            &:nth-of-type(1) { transform: scale(1.1); animation-delay: 0.2s; }
+            &:nth-of-type(2) { transform: scale(1.24); animation-delay: 0.6s; }
+            &:nth-of-type(3) { transform: scale(1.4);  animation-delay: 1s; }
+        }
+    }
+
+    .latest, .featured {
+        .container;
+        padding-bottom: 2.5rem;
+        padding-top: 1.5rem;
+    }
+
+    .projects-list {
+        display: grid;
+        gap: 0 3rem;
+        grid-template-columns: 1fr 1fr;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+            border-top: 1px solid var(--rule);
+            display: grid;
+            gap: 1.25rem;
+            grid-template-columns: 4.5rem 1fr;
+            padding: 1.6rem 0 2rem;
+        }
+
+        @media (max-width: @half-width-stop) {
+            grid-template-columns: 1fr;
+        }
+
+        .title {
+            .display;
+            font-size: 1.55rem;
+            font-weight: 500;
+            margin: 0;
+
+            a {
+                color: var(--ink);
+
+                &:hover {
+                    color: var(--koi);
+                    text-decoration: none;
+                }
+            }
+        }
+
+        .blurb {
+            margin: 0.5rem 0 0;
+            max-width: 34rem;
+        }
+
+        .links {
+            display: flex;
+            gap: 1.25rem;
+            margin: 0.75rem 0 0;
+        }
+
+        .tags {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin: 0.5rem 0 0;
+
+            span {
+                margin-right: 0.8rem;
+            }
         }
     }
 
     .project-mark {
-        background-color: @dark;
-        border: solid @light-gray 3px;
-        border-radius: 100%;
-        color: white;
-        height: @mark-size;
+        align-items: center;
+        background: var(--ink);
+        border-radius: 50%;
+        color: var(--paper);
+        display: flex;
+        font-family: @font-display;
+        font-size: 2rem;
+        height: 4.5rem;
+        justify-content: center;
         overflow: hidden;
-        position: relative;
-        width: @mark-size;
+        width: 4.5rem;
 
         img {
             height: 100%;
             object-fit: cover;
             width: 100%;
         }
+    }
+}
 
-        .fa {
-            font-size: 1.8rem;
-            left: 50%;
-            position: absolute;
-            text-shadow: none;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
+@keyframes ripple {
+    from {
+        opacity: 0;
+        transform: scale(0.7);
     }
 }

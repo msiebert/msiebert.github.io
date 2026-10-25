@@ -9,7 +9,7 @@
       url: https://github.com/msiebert/shark-fam
 - title: Wenchang
   blurb: "AI agents forget everything between sessions, so I wrote a Python library that gives them a memory. It's a filesystem of markdown files in GCS that the agent reads and writes through tools (with optimistic concurrency so two writers don't stomp on each other, and scopes to control who can write what)."
-  icon: fa-book
+  glyph: 文
   tags: [python, ai, gcs]
   links:
     - label: Source

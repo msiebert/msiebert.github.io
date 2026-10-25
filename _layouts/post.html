@@ -6,19 +6,18 @@ layout: main
         <div class="content">
             <h1 class="title">{{ page.title }}</h1>
             <p class="description">{{ page.description }}</p>
+            <p class="byline"><span class="seal seal-small" aria-hidden="true">鯉</span><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time></p>
         </div>
     </header>
     <div class="post-content">
         {{ content }}
+        <div class="end-mark" aria-hidden="true"><span class="seal">鯉</span></div>
     </div>
 
-    <header class="header comments">
-        <div class="content">
-            {% include social.html %}
-            <h1 class="title">Comments</h1>
-            <p class="description">Let me know what you think!</p>
-        </div>
-    </header>
+    <div class="comments-block">
+        <h2 class="section-title">Comments</h2>
+        <p>Let me know what you think!</p>
+    </div>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES * * */
