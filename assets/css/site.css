@@ -215,15 +215,15 @@ div.highlight {
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) div.highlight {
-    --code-bg: #05080a;
-    border-bottom: 1px solid var(--rule);
-    border-top: 1px solid var(--rule);
+    --code-bg: #1b2429;
+    border-bottom: 1px solid #36454d;
+    border-top: 1px solid #36454d;
   }
 }
 :root[data-theme="dark"] div.highlight {
-  --code-bg: #05080a;
-  border-bottom: 1px solid var(--rule);
-  border-top: 1px solid var(--rule);
+  --code-bg: #1b2429;
+  border-bottom: 1px solid #36454d;
+  border-top: 1px solid #36454d;
 }
 div.highlight pre {
   max-width: 1100px;
