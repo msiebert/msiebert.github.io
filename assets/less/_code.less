@@ -8,12 +8,12 @@ div.highlight {
     .horizontal-bar();
     margin: 2.5rem 0;
 
-    // The page is already near-black in dark mode, so go darker and edge the band.
-    @media (prefers-color-scheme: dark) {
-        --code-bg: #05080a;
-        border-bottom: 1px solid var(--rule);
-        border-top: 1px solid var(--rule);
-    }
+    // The page is already near-black in dark mode, so lift the band above it and edge it.
+    .dark-theme({
+        --code-bg: #1b2429;
+        border-bottom: 1px solid #36454d;
+        border-top: 1px solid #36454d;
+    });
 
     pre {
         .container;

@@ -19,16 +19,43 @@
     --koi-hover: #9d1410;
 }
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --paper: #0e1214;
-        --wash: #161d20;
-        --ink: #e8ebe9;
-        --muted: #8e9aa2;
-        --rule: #263034;
-        --koi: #ff5a4f;
-        --koi-hover: #ff8077;
+@dark-theme-vars: {
+    --paper: #0e1214;
+    --wash: #161d20;
+    --ink: #e8ebe9;
+    --muted: #8e9aa2;
+    --rule: #263034;
+    --koi: #ff5a4f;
+    --koi-hover: #ff8077;
+};
+
+// Dark rules apply when the visitor picked dark, or picked nothing and the system is dark.
+// The choice is stored on <html data-theme="light|dark"> (see _includes/theme.html).
+.dark-theme(@rules) {
+    @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) & {
+            @rules();
+        }
     }
+
+    :root[data-theme="dark"] & {
+        @rules();
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        @dark-theme-vars();
+    }
+}
+
+:root[data-theme="dark"] {
+    @dark-theme-vars();
+    color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+    color-scheme: light;
 }
 
 // code colors (code blocks are ink-dark in both themes)

@@ -1,0 +1,37 @@
+<script>
+  // Header button cycles system -> light -> dark. "System" clears the saved choice.
+  (function () {
+    var root = document.documentElement;
+    var order = ['system', 'light', 'dark'];
+    var icons = { system: 'fa-adjust', light: 'fa-sun-o', dark: 'fa-moon-o' };
+    var button = document.querySelector('[data-theme-toggle]');
+    if (!button) return;
+
+    function current() {
+      var t = root.getAttribute('data-theme');
+      return t === 'light' || t === 'dark' ? t : 'system';
+    }
+
+    function render() {
+      var mode = current();
+      button.querySelector('i').className = 'fa ' + icons[mode];
+      var label = 'Theme: ' + mode + ' (click to change)';
+      button.querySelector('.sr-only').textContent = label;
+      button.title = label;
+    }
+
+    button.addEventListener('click', function () {
+      var next = order[(order.indexOf(current()) + 1) % order.length];
+      if (next === 'system') root.removeAttribute('data-theme');
+      else root.setAttribute('data-theme', next);
+      try {
+        if (next === 'system') localStorage.removeItem('theme');
+        else localStorage.setItem('theme', next);
+      } catch (e) {}
+      render();
+    });
+
+    button.hidden = false;
+    render();
+  })();
+</script>

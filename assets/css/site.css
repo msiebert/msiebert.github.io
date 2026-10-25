@@ -16,7 +16,7 @@
   --koi-hover: #9d1410;
 }
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --paper: #0e1214;
     --wash: #161d20;
     --ink: #e8ebe9;
@@ -25,6 +25,19 @@
     --koi: #ff5a4f;
     --koi-hover: #ff8077;
   }
+}
+:root[data-theme="dark"] {
+  --paper: #0e1214;
+  --wash: #161d20;
+  --ink: #e8ebe9;
+  --muted: #8e9aa2;
+  --rule: #263034;
+  --koi: #ff5a4f;
+  --koi-hover: #ff8077;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  color-scheme: light;
 }
 /**
  * This less file contains a utility mixins to be used in other files.
@@ -201,11 +214,16 @@ div.highlight {
   margin: 2.5rem 0;
 }
 @media (prefers-color-scheme: dark) {
-  div.highlight {
-    --code-bg: #05080a;
-    border-bottom: 1px solid var(--rule);
-    border-top: 1px solid var(--rule);
+  :root:not([data-theme="light"]) div.highlight {
+    --code-bg: #1b2429;
+    border-bottom: 1px solid #36454d;
+    border-top: 1px solid #36454d;
   }
+}
+:root[data-theme="dark"] div.highlight {
+  --code-bg: #1b2429;
+  border-bottom: 1px solid #36454d;
+  border-top: 1px solid #36454d;
 }
 div.highlight pre {
   max-width: 1100px;
@@ -324,6 +342,7 @@ header.site-header.on-home .brand span {
   left: -9999px;
 }
 header.site-header nav {
+  align-items: center;
   display: flex;
   gap: 1.75rem;
 }
@@ -338,6 +357,25 @@ header.site-header nav a:hover {
 }
 header.site-header nav a[aria-current="page"] {
   border-bottom-color: var(--koi);
+}
+.theme-toggle {
+  background: none;
+  border: 0;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0.3rem;
+}
+.theme-toggle[hidden] {
+  display: none;
+}
+.theme-toggle:hover {
+  color: var(--koi);
+}
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--koi);
+  outline-offset: 3px;
 }
 /**
  * Styles for the home page: the pond hero, latest posts, featured projects.
@@ -395,9 +433,12 @@ article.home .pond img {
   width: 100%;
 }
 @media (prefers-color-scheme: dark) {
-  article.home .pond img {
+  :root:not([data-theme="light"]) article.home .pond img {
     mix-blend-mode: normal;
   }
+}
+:root[data-theme="dark"] article.home .pond img {
+  mix-blend-mode: normal;
 }
 article.home .pond .ring {
   animation: ripple 3.2s cubic-bezier(0.2, 0.7, 0.2, 1) backwards;
@@ -597,9 +638,12 @@ article.home .project-mark img {
   max-width: 34rem;
 }
 @media (prefers-color-scheme: dark) {
-  .index-list.projects .project-picture:not(.wenchang):not(.cumulus):not(.shark-fam) {
+  :root:not([data-theme="light"]) .index-list.projects .project-picture:not(.wenchang):not(.cumulus):not(.shark-fam) {
     background: #e8ebe9;
   }
+}
+:root[data-theme="dark"] .index-list.projects .project-picture:not(.wenchang):not(.cumulus):not(.shark-fam) {
+  background: #e8ebe9;
 }
 *,
 *::before,
@@ -641,6 +685,31 @@ a:focus-visible {
 }
 img {
   max-width: 100%;
+}
+.sr-only {
+  clip: rect(0 0 0 0);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.dark-only {
+  display: none;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"])  .light-only {
+    display: none;
+  }
+  :root:not([data-theme="light"])  .dark-only {
+    display: block;
+  }
+}
+:root[data-theme="dark"]  .light-only {
+  display: none;
+}
+:root[data-theme="dark"]  .dark-only {
+  display: block;
 }
 .header .content {
   margin: 0 auto;

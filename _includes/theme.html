@@ -1,0 +1,9 @@
+<script>
+  // Apply a saved light/dark choice before first paint; with none saved the system setting decides.
+  (function () {
+    try {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) {}
+  })();
+</script>
