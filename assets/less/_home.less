@@ -85,7 +85,7 @@ article.home {
     .projects-list {
         display: grid;
         gap: 0 3rem;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         list-style: none;
         margin: 0;
         padding: 0;
@@ -94,12 +94,12 @@ article.home {
             border-top: 1px solid var(--rule);
             display: grid;
             gap: 1.25rem;
-            grid-template-columns: 4.5rem 1fr;
+            grid-template-columns: 4.5rem minmax(0, 1fr);
             padding: 1.6rem 0 2rem;
         }
 
         @media (max-width: @half-width-stop) {
-            grid-template-columns: 1fr;
+            grid-template-columns: minmax(0, 1fr);
         }
 
         .title {
@@ -129,14 +129,14 @@ article.home {
             margin: 0.75rem 0 0;
         }
 
+        // Flex so tags wrap: the markup has no spaces between the spans.
         .tags {
             color: var(--muted);
+            display: flex;
+            flex-wrap: wrap;
             font-size: 0.9rem;
+            gap: 0 0.8rem;
             margin: 0.5rem 0 0;
-
-            span {
-                margin-right: 0.8rem;
-            }
         }
     }
 

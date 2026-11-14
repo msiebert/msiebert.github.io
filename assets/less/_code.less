@@ -3,7 +3,8 @@
  * Code blocks stay ink-dark in both themes.
  */
 
-div.highlight {
+// Fenced blocks render as div.highlight; older posts use the {% highlight %} tag, which renders figure.highlight.
+div.highlight, figure.highlight {
     --code-bg: #0f1214;
     .horizontal-bar();
     margin: 2.5rem 0;
