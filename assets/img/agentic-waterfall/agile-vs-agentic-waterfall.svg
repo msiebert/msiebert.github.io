@@ -28,19 +28,19 @@
   <text class="ink h" x="30" y="44">Agile, with agents</text>
   <text class="muted s" x="30" y="64">Every story pays the finishing cost</text>
   <g>
-    <rect class="build" x="30" y="84" width="54" height="26" rx="3"/>
-    <rect class="finish" x="86" y="84" width="70" height="26" rx="3"/>
-    <circle class="ship" cx="166" cy="97" r="5"/>
-    <rect class="build" x="180" y="84" width="54" height="26" rx="3"/>
-    <rect class="finish" x="236" y="84" width="70" height="26" rx="3"/>
-    <circle class="ship" cx="316" cy="97" r="5"/>
-    <rect class="build" x="330" y="84" width="54" height="26" rx="3"/>
-    <rect class="finish" x="386" y="84" width="70" height="26" rx="3"/>
-    <circle class="ship" cx="466" cy="97" r="5"/>
-    <rect class="build" x="480" y="84" width="54" height="26" rx="3"/>
-    <rect class="finish" x="536" y="84" width="70" height="26" rx="3"/>
-    <circle class="ship" cx="616" cy="97" r="5"/>
-    <text class="muted s" x="632" y="102">and so on...</text>
+    <rect class="build" x="30" y="84" width="108" height="26" rx="3"/>
+    <rect class="finish" x="140" y="84" width="12" height="26" rx="3"/>
+    <circle class="ship" cx="162" cy="97" r="5"/>
+    <rect class="build" x="180" y="84" width="108" height="26" rx="3"/>
+    <rect class="finish" x="290" y="84" width="12" height="26" rx="3"/>
+    <circle class="ship" cx="312" cy="97" r="5"/>
+    <rect class="build" x="330" y="84" width="108" height="26" rx="3"/>
+    <rect class="finish" x="440" y="84" width="12" height="26" rx="3"/>
+    <circle class="ship" cx="462" cy="97" r="5"/>
+    <rect class="build" x="480" y="84" width="108" height="26" rx="3"/>
+    <rect class="finish" x="590" y="84" width="12" height="26" rx="3"/>
+    <circle class="ship" cx="612" cy="97" r="5"/>
+    <text class="muted s" x="628" y="102">and so on...</text>
   </g>
 
   <line class="line" x1="30" y1="140" x2="730" y2="140" stroke-width="1"/>
@@ -49,8 +49,8 @@
   <text class="ink h" x="30" y="178">Agentic waterfall</text>
   <text class="muted s" x="30" y="198">The whole product gets to 90% first, then one finishing pass</text>
   <g>
-    <rect class="build" x="30" y="218" width="230" height="26" rx="3"/>
-    <rect class="finish" x="262" y="218" width="150" height="26" rx="3"/>
+    <rect class="build" x="30" y="218" width="342" height="26" rx="3"/>
+    <rect class="finish" x="374" y="218" width="38" height="26" rx="3"/>
     <circle class="ship" cx="422" cy="231" r="5"/>
     <text class="ink s" x="436" y="236">In front of customers, get feedback</text>
   </g>
