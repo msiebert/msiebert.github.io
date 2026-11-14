@@ -4,11 +4,15 @@ tags: [ai, productivity, claude]
 permalink: /agentic-waterfall/
 blurb: "We ditched waterfall because it was too slow. Turns out it isn't anymore."
 description: Why I think coding agents make waterfall a better way to build software than small agile iterations, and the workflow I use to do it.
+metaname: "Agentic Waterfall: Why Waterfall Makes Sense Again"
+image: agentic-waterfall/header.jpg
 ---
 
 I've been building software a little differently lately. Big plan up front, build the whole thing, finish it, then ship it. If that sounds a lot like waterfall, that's because it is. I've started calling it agentic waterfall, and I think it's actually a better way to work than the agile process most of us grew up with, at least now that agents are writing most of the code.
 
 I know. Waterfall. Hear me out.
+
+![Robots riding a barrel down a waterfall while koi leap up it](/assets/img/agentic-waterfall/header.jpg)
 
 ### Why We Stopped Doing Waterfall
 
