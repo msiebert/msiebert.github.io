@@ -7,6 +7,8 @@ header.site-header {
         .container;
         align-items: center;
         display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1rem;
         justify-content: space-between;
         padding-bottom: 1rem;
         padding-top: 1.25rem;
@@ -45,6 +47,10 @@ header.site-header {
         align-items: center;
         display: flex;
         gap: 1.75rem;
+
+        @media (max-width: @half-width-stop) {
+            gap: 1.25rem;
+        }
 
         a {
             border-bottom: 2px solid transparent;
