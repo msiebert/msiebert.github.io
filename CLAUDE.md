@@ -127,6 +127,7 @@ GitHub Pages will automatically build the Jekyll site and deploy it.
 ### Adding a Blog Post
 1. Create a new file in `_posts/` with format: `YYYY-MM-DD-title.md`
 2. Add frontmatter with layout, author, and post metadata
+   - `image:` (a path under `assets/img/`) is the post's link preview image on X, Bluesky, Slack and the like. Without it, the site-wide `share_image` from `_config.yml` (`social-card.png`, 1200x630) is used.
 3. Write content in Markdown
 4. Commit and push to trigger automatic deployment
 
