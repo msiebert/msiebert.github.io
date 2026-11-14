@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 330" role="img" aria-labelledby="t d">
+  <title id="t">Agile with agents versus agentic waterfall</title>
+  <desc id="d">With agile, each small story is built to about 90 percent by an agent and then finished by hand before it ships, so the finishing step repeats for every story. With agentic waterfall, the whole product is built to about 90 percent, finished once, and shipped to customers for feedback.</desc>
+  <style>
+    .bg { fill: #f1f2f0; stroke: #cdd2d0; }
+    .ink { fill: #15171a; }
+    .muted { fill: #56616a; }
+    .build { fill: #c71f1a; }
+    .finish { fill: #56616a; }
+    .ship { fill: #15171a; }
+    .line { stroke: #cdd2d0; }
+    text { font-family: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .h { font-size: 17px; font-weight: 600; }
+    .s { font-size: 13px; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #161d20; stroke: #263034; }
+      .ink { fill: #e8ebe9; }
+      .muted { fill: #8e9aa2; }
+      .build { fill: #ff5a4f; }
+      .finish { fill: #8e9aa2; }
+      .ship { fill: #e8ebe9; }
+      .line { stroke: #263034; }
+    }
+  </style>
+  <rect class="bg" x="1" y="1" width="758" height="328" rx="10"/>
+
+  <!-- Agile row -->
+  <text class="ink h" x="30" y="44">Agile, with agents</text>
+  <text class="muted s" x="30" y="64">Every story pays the finishing cost</text>
+  <g>
+    <rect class="build" x="30" y="84" width="54" height="26" rx="3"/>
+    <rect class="finish" x="86" y="84" width="70" height="26" rx="3"/>
+    <circle class="ship" cx="166" cy="97" r="5"/>
+    <rect class="build" x="180" y="84" width="54" height="26" rx="3"/>
+    <rect class="finish" x="236" y="84" width="70" height="26" rx="3"/>
+    <circle class="ship" cx="316" cy="97" r="5"/>
+    <rect class="build" x="330" y="84" width="54" height="26" rx="3"/>
+    <rect class="finish" x="386" y="84" width="70" height="26" rx="3"/>
+    <circle class="ship" cx="466" cy="97" r="5"/>
+    <rect class="build" x="480" y="84" width="54" height="26" rx="3"/>
+    <rect class="finish" x="536" y="84" width="70" height="26" rx="3"/>
+    <circle class="ship" cx="616" cy="97" r="5"/>
+    <text class="muted s" x="632" y="102">and so on...</text>
+  </g>
+
+  <line class="line" x1="30" y1="140" x2="730" y2="140" stroke-width="1"/>
+
+  <!-- Agentic waterfall row -->
+  <text class="ink h" x="30" y="178">Agentic waterfall</text>
+  <text class="muted s" x="30" y="198">The whole product gets to 90% first, then one finishing pass</text>
+  <g>
+    <rect class="build" x="30" y="218" width="230" height="26" rx="3"/>
+    <rect class="finish" x="262" y="218" width="150" height="26" rx="3"/>
+    <circle class="ship" cx="422" cy="231" r="5"/>
+    <text class="ink s" x="436" y="236">In front of customers, get feedback</text>
+  </g>
+
+  <!-- Legend -->
+  <g>
+    <rect class="build" x="30" y="282" width="16" height="12" rx="2"/>
+    <text class="muted s" x="52" y="293">Agent builds to ~90%</text>
+    <rect class="finish" x="210" y="282" width="16" height="12" rx="2"/>
+    <text class="muted s" x="232" y="293">Finishing the last 10%</text>
+    <circle class="ship" cx="426" cy="288" r="5"/>
+    <text class="muted s" x="438" y="293">Release</text>
+  </g>
+</svg>
