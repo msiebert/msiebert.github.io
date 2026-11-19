@@ -5,11 +5,14 @@ permalink: /build-your-agent-an-app/
 blurb: "I built a todo app with no UI. I'm not the one using it."
 description: Why I built Tally, a local list app whose only user is my AI agent, and what changes when you design software for an agent instead of a person.
 metaname: "When a Skill Isn't Enough, Build Your Agent an App"
+image: build-your-agent-an-app/header.jpg
 ---
 
 I wanted to get back into keeping a todo list. When I looked at the tools I already had, they all felt too heavy. Notion and Linear are great for real projects, but way too much for "buy milk." And my grocery list lived in a separate app on my phone that I updated by hand.
 
 What I wanted was dead simple: a list my agent could manage for me, so keeping it up wouldn't take any work. Nothing that existed was quite that, so I built one. It's called [Tally](https://msiebert.github.io/Tally/), and it's a todo app with no UI, because I'm not the one using it.
+
+![A craftsman builds a wooden tally board for a little robot while another robot keeps a scroll list beside a koi pond](/assets/img/build-your-agent-an-app/header.jpg)
 
 ### Skills vs. Apps
 
