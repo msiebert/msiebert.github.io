@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 300" role="img" aria-labelledby="t d">
+  <title id="t">Three ways to give an agent a new ability</title>
+  <desc id="d">A skill teaches the agent how to use tools it already has. An existing service like Notion or Linear is built for people, so the agent has to adapt to it. An app built for your agent is shaped around how the agent works.</desc>
+  <style>
+    .bg { fill: #f1f2f0; stroke: #cdd2d0; }
+    .card { fill: #ffffff; stroke: #cdd2d0; }
+    .pick { fill: #ffffff; stroke: #c71f1a; }
+    .ink { fill: #15171a; }
+    .muted { fill: #56616a; }
+    .accent { fill: #c71f1a; }
+    text { font-family: 'Hanken Grotesk', system-ui, -apple-system, 'Segoe UI', sans-serif; }
+    .h { font-size: 17px; font-weight: 600; }
+    .s { font-size: 13px; }
+    .k { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; }
+    @media (prefers-color-scheme: dark) {
+      .bg { fill: #161d20; stroke: #263034; }
+      .card { fill: #1d2629; stroke: #263034; }
+      .pick { fill: #1d2629; stroke: #ff5a4f; }
+      .ink { fill: #e8ebe9; }
+      .muted { fill: #8e9aa2; }
+      .accent { fill: #ff5a4f; }
+    }
+  </style>
+  <rect class="bg" x="1" y="1" width="758" height="298" rx="10"/>
+
+  <!-- Skill -->
+  <rect class="card" x="30" y="30" width="220" height="240" rx="8" stroke-width="1"/>
+  <text class="muted k" x="50" y="62">SKILL</text>
+  <text class="ink h" x="50" y="92">Teaches Claude how</text>
+  <text class="muted s" x="50" y="124">Instructions for using</text>
+  <text class="muted s" x="50" y="142">tools Claude already has.</text>
+  <text class="muted s" x="50" y="176">Great when the tools</text>
+  <text class="muted s" x="50" y="194">underneath fit the job.</text>
+
+  <!-- Existing service -->
+  <rect class="card" x="270" y="30" width="220" height="240" rx="8" stroke-width="1"/>
+  <text class="muted k" x="290" y="62">EXISTING SERVICE</text>
+  <text class="ink h" x="290" y="92">Built for people</text>
+  <text class="muted s" x="290" y="124">Notion, Linear and friends.</text>
+  <text class="muted s" x="290" y="142">Claude adapts to them.</text>
+  <text class="muted s" x="290" y="176">Fiddly field formats,</text>
+  <text class="muted s" x="290" y="194">screens it can't see,</text>
+  <text class="muted s" x="290" y="212">more than a list needs.</text>
+
+  <!-- App for your agent -->
+  <rect class="pick" x="510" y="30" width="220" height="240" rx="8" stroke-width="2"/>
+  <text class="accent k" x="530" y="62">APP FOR YOUR AGENT</text>
+  <text class="ink h" x="530" y="92">Built for Claude</text>
+  <text class="muted s" x="530" y="124">No UI. Errors that say</text>
+  <text class="muted s" x="530" y="142">how to fix the problem.</text>
+  <text class="muted s" x="530" y="176">Compact reads, so it's</text>
+  <text class="muted s" x="530" y="194">cheap on context.</text>
+  <text class="ink s" x="530" y="246">This is Tally.</text>
+</svg>
