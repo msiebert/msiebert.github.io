@@ -616,6 +616,7 @@ article.home .project-mark img {
   width: 70%;
 }
 .index-list.projects .shark-fam img,
+.index-list.projects .tally img,
 .index-list.projects .sharethrough img {
   border-radius: 50%;
   height: 100%;
@@ -661,11 +662,11 @@ article.home .project-mark img {
   max-width: 34rem;
 }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .index-list.projects .project-picture:not(.wenchang):not(.cumulus):not(.shark-fam) {
+  :root:not([data-theme="light"]) .index-list.projects .project-picture:not(.wenchang):not(.cumulus):not(.shark-fam):not(.tally) {
     background: #e8ebe9;
   }
 }
-:root[data-theme="dark"] .index-list.projects .project-picture:not(.wenchang):not(.cumulus):not(.shark-fam) {
+:root[data-theme="dark"] .index-list.projects .project-picture:not(.wenchang):not(.cumulus):not(.shark-fam):not(.tally) {
   background: #e8ebe9;
 }
 *,
