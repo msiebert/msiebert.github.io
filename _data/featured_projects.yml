@@ -1,3 +1,14 @@
+- title: Tally
+  blurb: "I wanted a todo list that took zero effort to keep up, so I built one my agent manages for me. Tally is a local MCP server with no UI (Claude is the interface). Errors tell the agent exactly how to fix its mistake, and each list carries its own instructions so I don't have to repeat myself."
+  image: tally-mark.jpg
+  tags: [rust, mcp, ai, claude]
+  links:
+    - label: Site
+      url: https://msiebert.github.io/Tally/
+    - label: Source
+      url: https://github.com/msiebert/Tally
+    - label: The post
+      url: /build-your-agent-an-app/
 - title: Shark Fam
   blurb: "I wanted to find out whether Claude can make decent 3D models, and how to get it there. So we looked at a bunch of options (scripted Blender, AI mesh generators, plain three.js) and ended up with parametric Blender models swimming around in three.js. Somehow that turned into a browsable shark family tree (the sharks were honestly a side effect). The real project is learning how to make 3D things with Claude."
   image: shark-fam-mark.jpg
