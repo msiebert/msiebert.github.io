@@ -23,5 +23,7 @@
   glyph: 文
   tags: [python, ai, gcs]
   links:
+    - label: Site
+      url: https://msiebert.github.io/wenchang/
     - label: Source
       url: https://github.com/msiebert/wenchang
